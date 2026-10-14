@@ -16,8 +16,10 @@
   --row1:60px;
   --nav-h:60px;
   --marquee-h:46px;
-  --ga:.10;
-  --gb:.06;
+  --gl:.12;
+  --gr:.10;
+  --gl2:.08;
+  --gr2:.06;
   --gold:#F3D9A4;
   --gold-line:#E9C98B;
   --glow:0 0 1px rgba(255,255,255,.9),0 0 8px rgba(255,236,200,.85),0 0 18px rgba(255,236,200,.5);
@@ -26,7 +28,7 @@
 *{box-sizing:border-box}
 html{background:var(--bg)}
 body{margin:0;padding-top:var(--nav-h);color:var(--text);font-family:var(--body);line-height:1.6}
-body::before{content:"";position:fixed;inset:-60px;z-index:-1;pointer-events:none;filter:blur(40px);background:radial-gradient(ellipse 45% 70% at 0% 40%,rgba(108,36,58,var(--ga)),transparent 70%),radial-gradient(ellipse 50% 60% at 0% 85%,rgba(108,36,58,var(--gb)),transparent 70%),radial-gradient(ellipse 45% 70% at 100% 55%,rgba(62,92,64,var(--ga)),transparent 70%),radial-gradient(ellipse 50% 60% at 100% 10%,rgba(62,92,64,var(--gb)),transparent 70%);animation:mist 28s ease-in-out infinite alternate}
+body::before{content:"";position:fixed;inset:-60px;z-index:-1;pointer-events:none;filter:blur(40px);background:radial-gradient(ellipse 45% 70% at 0% 40%,rgba(108,36,58,var(--gl)),transparent 70%),radial-gradient(ellipse 50% 60% at 0% 85%,rgba(108,36,58,var(--gl2)),transparent 70%),radial-gradient(ellipse 45% 70% at 100% 55%,rgba(62,92,64,var(--gr)),transparent 70%),radial-gradient(ellipse 50% 60% at 100% 10%,rgba(62,92,64,var(--gr2)),transparent 70%);animation:mist 28s ease-in-out infinite alternate}
 main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 
 .nav{position:fixed;inset:0 0 auto;z-index:10}
@@ -192,7 +194,7 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 .mission-card .mission-text{margin:0;font-family:var(--body);font-weight:400;font-size:1.08rem;line-height:1.7;color:var(--bg)}
 
 /* why hope valley */
-.why-band{position:relative;overflow:hidden;overflow-x:clip;margin-top:64px;padding:40px var(--pad);background:linear-gradient(150deg,#5A1C30,#6C243A 60%,#85304B);color:var(--bg)}
+.why-band{position:relative;overflow:hidden;margin-top:64px;padding:40px var(--pad);background:linear-gradient(150deg,#5A1C30,#6C243A 60%,#85304B);color:var(--bg)}
 .why-band::before{content:"";position:absolute;inset:0;background:url(images/gallery/convocation-2016-2.jpg) center/cover;filter:blur(8px);transform:scale(1.12)}
 .why-band::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(90,28,48,.92) 0%,rgba(108,36,58,.85) 45%,rgba(47,74,51,.88) 100%)}
 .why-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto}
@@ -270,9 +272,7 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 .featured figcaption{font-family:var(--script);font-weight:700;font-size:1.4rem;text-align:center;color:var(--primary)}
 
 /* gallery */
-.gallery{position:relative;overflow-x:clip;background:transparent;padding:48px var(--pad) 56px}
-.gallery::before{content:"";position:absolute;inset:0;background:url(images/gallery/convocation-2016-1.jpg) center/cover;filter:blur(12px);transform:scale(1.15)}
-.gallery::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(250,246,242,.9) 0%,rgba(250,246,242,.82) 160px,rgba(243,238,246,.84) 100%)}
+.gallery{position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(250,246,242,.9) 0%,rgba(250,246,242,.82) 160px,rgba(243,238,246,.84) 100%);padding:48px var(--pad) 56px}
 .gallery-inner{position:relative;z-index:1;background:transparent;display:flex;flex-direction:column;align-items:center;gap:36px;max-width:1200px;margin:0 auto}
 .gallery-rows{display:flex;flex-direction:column;gap:14px;width:100vw;margin-left:calc(50% - 50vw);-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
 .grow{overflow:hidden}
@@ -311,7 +311,7 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 }
 
 @media (min-width:900px){
-  :root{--row1:56px;--nav-h:102px;--ga:.16;--gb:.10}
+  :root{--row1:56px;--nav-h:102px;--gl:.20;--gr:.16;--gl2:.13;--gr2:.10}
 
   /* row 1: logo | school name | social icons */
   .nav-top{grid-template-columns:1fr auto 1fr}
@@ -385,4 +385,4 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 @keyframes glow{50%{text-shadow:0 0 1px rgba(255,255,255,.63),0 0 8px rgba(255,236,200,.6),0 0 18px rgba(255,236,200,.35)}}
 
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}.marquee-track,.marquee-group span,.hero-slides img{animation:none}.hero-text>*{animation:none;opacity:1;transform:none}.reveal,.reveal-right,.reveal-left{opacity:1;transform:none}.mission-media::before,.polaroids.is-in .polaroid,.life-row.is-in i,.lightbox,.lb-body,.orbit-ring,.orb img,.gtrack,body::before{content:"";position:fixed;inset:-60px;z-index:-1;pointer-events:none;filter:blur(40px);background:radial-gradient(ellipse 45% 70% at 0% 40%,rgba(108,36,58,var(--ga)),transparent 70%),radial-gradient(ellipse 50% 60% at 0% 85%,rgba(108,36,58,var(--gb)),transparent 70%),radial-gradient(ellipse 45% 70% at 100% 55%,rgba(62,92,64,var(--ga)),transparent 70%),radial-gradient(ellipse 50% 60% at 100% 10%,rgba(62,92,64,var(--gb)),transparent 70%);animation:mist 28s ease-in-out infinite alternate}.grow{overflow-x:auto}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.marquee-track,.marquee-group span,.hero-slides img{animation:none}.hero-text>*{animation:none;opacity:1;transform:none}.reveal,.reveal-right,.reveal-left{opacity:1;transform:none}.mission-media::before,.polaroids.is-in .polaroid,.life-row.is-in i,.lightbox,.lb-body,.orbit-ring,.orb img,.gtrack,body::before{content:"";position:fixed;inset:-60px;z-index:-1;pointer-events:none;filter:blur(40px);background:radial-gradient(ellipse 45% 70% at 0% 40%,rgba(108,36,58,var(--gl)),transparent 70%),radial-gradient(ellipse 50% 60% at 0% 85%,rgba(108,36,58,var(--gl2)),transparent 70%),radial-gradient(ellipse 45% 70% at 100% 55%,rgba(62,92,64,var(--gr)),transparent 70%),radial-gradient(ellipse 50% 60% at 100% 10%,rgba(62,92,64,var(--gr2)),transparent 70%);animation:mist 28s ease-in-out infinite alternate}.grow{overflow-x:auto}}
