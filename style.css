@@ -61,6 +61,10 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 .hero{position:relative;overflow:hidden;display:flex;height:75svh;min-height:520px}
 .hero-slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease}
 .hero-slides img.is-active{opacity:1;animation:kenburns 7.2s ease-out forwards}
+.hero-slides img:nth-child(1){object-position:center 38%}
+.hero-slides img:nth-child(2){object-position:center 62%}
+.hero-slides img:nth-child(3){object-position:center 30%}
+.hero-slides img:nth-child(4){object-position:center 32%}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(108,36,58,.85),rgba(108,36,58,.55) 50%,rgba(108,36,58,.25) 85%)}
 
 .hero-text{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;width:100%;padding:0 clamp(20px,6vw,96px) 3rem;text-align:center;color:var(--bg)}
@@ -71,7 +75,7 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 .hero-text>:nth-child(4){animation-delay:.46s}
 .hero-text>:nth-child(5){animation-delay:.58s}
 .hero-text h1{font-family:var(--head);font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:clamp(2.2rem,5vw,4.2rem);line-height:1.1}
-.hero-tag{font-family:var(--script);font-weight:600;font-size:clamp(1.6rem,3vw,2.4rem);color:var(--gold);text-shadow:var(--glow)}
+.hero-tag{font-family:var(--script);font-weight:600;line-height:1.1;font-size:clamp(1.6rem,3vw,2.4rem);color:var(--gold);text-shadow:var(--glow)}
 .hero-rule{width:60px;height:1px;background:var(--accent)}
 .hero-school{font-family:var(--head);font-size:clamp(1.3rem,2.2vw,1.8rem)}
 .hero-sub{font-style:italic;font-size:1.05rem;opacity:.85}
@@ -119,6 +123,7 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
   .hero{height:calc(100vh - var(--nav-h) - var(--marquee-h));height:calc(100svh - var(--nav-h) - var(--marquee-h))}
   .hero::after{background:linear-gradient(90deg,rgba(108,36,58,.75),rgba(108,36,58,.4) 40%,transparent 65%),linear-gradient(0deg,rgba(42,31,34,.45),transparent 35%)}
   .hero-text{align-items:flex-start;max-width:560px;padding-bottom:0;text-align:left}
+  .hero-tag{white-space:nowrap}
   .hero-nav{opacity:0}
   .hero:hover .hero-nav,.hero-nav:focus-visible{opacity:1}
 }
