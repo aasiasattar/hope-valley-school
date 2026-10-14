@@ -97,10 +97,12 @@ document.querySelectorAll(".reveal,.reveal-right,.reveal-left").forEach(el => re
 
 const grid = document.getElementById("gallery-grid");
 grid.innerHTML = gallery.map((p, i) =>
-  `<button class="shot${i > 8 ? " extra" : ""}" type="button" data-i="${i}">
+  `<button class="shot reveal${i > 8 ? " extra" : ""}" type="button" data-i="${i}" style="--i:${i}">
      <img src="images/gallery/${p.file}" alt="${p.title}" loading="lazy">
      <span>${p.title}</span>
    </button>`).join("");
+
+grid.querySelectorAll(".shot").forEach(el => reveal.observe(el));
 
 document.getElementById("gallery-more").addEventListener("click", e => {
   grid.classList.add("show-all");
@@ -117,6 +119,7 @@ const openShot = i => {
   lbImg.src = "images/gallery/" + gallery[shot].file;
   lbImg.alt = lbCap.textContent = gallery[shot].title;
   lb.hidden = false;
+  lbImg.animate([{ opacity: 0 }, { opacity: 1 }], 250);
 };
 
 grid.addEventListener("click", e => {
