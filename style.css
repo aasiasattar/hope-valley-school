@@ -204,7 +204,7 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 
 /* why hope valley */
 .why-band{position:relative;overflow:hidden;margin-top:64px;padding:40px var(--pad);background:linear-gradient(150deg,#5A1C30,#6C243A 60%,#85304B);color:var(--bg)}
-.why-band::before{content:"";position:absolute;inset:0;background:url(images/gallery/convocation-2016-2.jpg) center/cover;filter:blur(8px);transform:scale(1.12);-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 80px);mask-image:linear-gradient(180deg,transparent 0,#000 80px)}
+.why-band::before{content:"";position:absolute;inset:0;background:url(images/gallery/convocation-2016-2.jpg) center/cover;filter:blur(8px);transform:scale(1.12)}
 .why-band::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(90,28,48,.92) 0%,rgba(108,36,58,.85) 45%,rgba(47,74,51,.88) 100%)}
 .why-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto}
 .why-head{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:.35rem;margin-bottom:28px;text-align:center;transition:opacity 1.2s ease,transform 1.2s ease}
@@ -326,7 +326,7 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 .btn-call:hover{--ov:rgba(108,36,58,.64)}
 
 /* contact */
-.contact{position:relative;overflow-x:clip;padding:48px var(--pad) 56px}
+.contact{position:relative;overflow-x:clip;padding:48px var(--pad) 40px}
 .contact::before{content:"";position:absolute;inset:0 0 auto;height:160px;background:linear-gradient(180deg,rgba(250,246,242,.94),rgba(250,246,242,0))}
 .contact-inner{position:relative;z-index:1;display:flex;flex-direction:column;gap:36px;max-width:1200px;margin:0 auto}
 .contact-head{display:flex;flex-direction:column;align-items:center;gap:.5rem;text-align:center;transition:opacity 1.2s ease,transform 1.2s ease}
@@ -347,8 +347,8 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 
 /* footer */
 .foot{position:relative;z-index:0;overflow:hidden;padding:64px var(--pad) 28px;color:var(--bg)}
-.foot::before{content:"";position:absolute;inset:0;z-index:-3;background:url(images/gallery/annual-day-2017.jpg) center/cover;filter:blur(8px);transform:scale(1.12);-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 80px);mask-image:linear-gradient(180deg,transparent 0,#000 80px)}
-.foot::after{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(120deg,rgba(74,22,39,.94) 0%,rgba(108,36,58,.88) 45%,rgba(40,64,44,.92) 100%);-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 80px);mask-image:linear-gradient(180deg,transparent 0,#000 80px)}
+.foot::before{content:"";position:absolute;inset:0;z-index:-3;background:url(images/gallery/annual-day-2017.jpg) center/cover;filter:blur(8px);transform:scale(1.12);-webkit-mask-image:linear-gradient(180deg,transparent 0,rgba(0,0,0,.3) 16px,rgba(0,0,0,.75) 32px,#000 48px);mask-image:linear-gradient(180deg,transparent 0,rgba(0,0,0,.3) 16px,rgba(0,0,0,.75) 32px,#000 48px)}
+.foot::after{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(120deg,rgba(74,22,39,.94) 0%,rgba(108,36,58,.88) 45%,rgba(40,64,44,.92) 100%);-webkit-mask-image:linear-gradient(180deg,transparent 0,rgba(0,0,0,.3) 16px,rgba(0,0,0,.75) 32px,#000 48px);mask-image:linear-gradient(180deg,transparent 0,rgba(0,0,0,.3) 16px,rgba(0,0,0,.75) 32px,#000 48px)}
 .foot-leaf{position:absolute;right:24px;bottom:24px;z-index:-1;width:160px;height:130px;background:url(images/logo-icon-light.png) no-repeat center/contain;opacity:.04;pointer-events:none}
 .foot-inner{position:relative;display:grid;gap:32px;max-width:1200px;margin:0 auto;text-align:center;justify-items:center}
 .foot-brand{display:flex;flex-direction:column;align-items:center;gap:.5rem}
@@ -372,7 +372,7 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 .credit{font-family:var(--script);font-weight:700;font-size:1.15rem;background-image:linear-gradient(90deg,#F3D9A4,#FAF6F2);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 10px rgba(243,217,164,.55),0 0 22px rgba(243,217,164,.25);animation:credit-glow 3s ease-in-out infinite}
 
 /* floating whatsapp */
-.wa-float{position:fixed;right:16px;bottom:16px;z-index:40;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:#25D366;color:#fff;box-shadow:0 10px 26px rgba(37,211,102,.45);transition:translate .35s ease}
+.wa-float{position:fixed;right:16px;bottom:88px;z-index:9999;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:#25D366;color:#fff;box-shadow:0 10px 26px rgba(37,211,102,.45);transition:translate .35s ease}
 .wa-float::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:ring 2.5s ease-out infinite}
 .wa-float:hover{translate:0 -3px}
 .wa-float span{position:absolute;right:calc(100% + 10px);white-space:nowrap;padding:.45rem .85rem;border-radius:999px;background:var(--primary);color:var(--bg);font-size:.82rem;font-weight:600;opacity:0;pointer-events:none;transition:opacity .3s ease}
@@ -390,9 +390,8 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 @media (min-width:1100px){
   .why-cards{grid-template-columns:repeat(4,1fr)}
   .gtile{width:290px;height:220px}
-  .contact{padding-bottom:96px}
   .contact-row{grid-template-columns:1fr 1fr}
-  .wa-float{right:24px;bottom:24px;width:58px;height:58px}
+  .wa-float{right:24px;bottom:96px;width:58px;height:58px}
   .orbit-wrap{grid-template-columns:40% 60%;gap:40px}
   .orbit{width:440px;height:440px;margin:0 0 0 calc(40px - var(--edge));justify-self:start;--r:178px;--orb:84px}
 }
