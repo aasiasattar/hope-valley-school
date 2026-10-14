@@ -18,6 +18,7 @@ Show "Registered under Charity Act 2021" (small, trust signal).
 - Icons: Lucide inline SVG. No emoji icons.
 - Subtle, slow animations; respect prefers-reduced-motion.
 - Avoid the "AI look": no purple-blue gradients, glowing blobs, glassmorphism.
+- Exception: navbar only may use a subtle frosted-glass effect.
 
 ## Images
 - Originals live in _originals/ (gitignored, local only). Never delete, rename or overwrite them.
