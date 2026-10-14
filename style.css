@@ -98,6 +98,8 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 /* shared */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .reveal.is-in{opacity:1;transform:none}
+.reveal-right{opacity:0;transform:translateX(80px)}
+.reveal-right.is-in{opacity:1;transform:none}
 .rule{width:60px;height:1px;background:var(--accent)}
 .about .section-title,.mission .section-title{display:inline-flex;align-items:center;gap:.7rem;margin:0;font-family:var(--head);font-style:italic;font-weight:600;font-size:clamp(1.6rem,2.6vw,2.1rem);line-height:1.2}
 .section-title span,.mission-head h2{background-image:linear-gradient(90deg,#6C243A,#9B2C4E 50%,#6F8A6B);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -184,7 +186,7 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 .mission-card .mission-text{margin:0;font-family:var(--body);font-weight:400;font-size:1.08rem;line-height:1.7;color:var(--bg)}
 
 /* why hope valley */
-.why-band{position:relative;overflow:hidden;margin-top:64px;padding:40px var(--pad);background:linear-gradient(150deg,#5A1C30,#6C243A 60%,#85304B);color:var(--bg)}
+.why-band{position:relative;overflow:hidden;overflow-x:clip;margin-top:64px;padding:40px var(--pad);background:linear-gradient(150deg,#5A1C30,#6C243A 60%,#85304B);color:var(--bg)}
 .why-band::before{content:"";position:absolute;inset:0;background:url(images/gallery/convocation-2016-2.jpg) center/cover;filter:blur(8px);transform:scale(1.12)}
 .why-band::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(90,28,48,.92) 0%,rgba(108,36,58,.85) 45%,rgba(47,74,51,.88) 100%)}
 .why-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto}
@@ -195,16 +197,16 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 .why-sub{margin:0;opacity:.8}
 
 .why-cards{position:relative;z-index:1;display:grid;gap:16px;margin:0;padding:0;list-style:none}
-.why-card{position:relative;overflow:hidden;z-index:1;display:flex;flex-direction:column;align-items:flex-start;gap:.6rem;padding:24px;border-radius:18px;box-shadow:0 12px 30px rgba(0,0,0,.25);transition:opacity .7s ease var(--d,0s),transform .7s ease var(--d,0s),translate .4s ease,box-shadow .4s ease}
+.why-card{position:relative;overflow:hidden;z-index:1;display:flex;flex-direction:column;align-items:flex-start;gap:.6rem;padding:24px;border-radius:18px;box-shadow:0 12px 30px rgba(0,0,0,.25);transition:opacity .8s cubic-bezier(.2,.7,.2,1) calc(var(--i,0)*150ms),transform .8s cubic-bezier(.2,.7,.2,1) calc(var(--i,0)*150ms),translate .4s ease,box-shadow .4s ease}
 .why-card::before{content:"";position:absolute;inset:0;z-index:-2;background-position:center;background-size:cover;filter:blur(10px);transform:scale(1.15);transition:filter .5s ease}
 .why-card::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(250,246,242,.84),rgba(237,230,243,.88))}
 .why-card:nth-child(1)::before{background-image:url(images/gallery/speech-contest-2017.jpg)}
 .why-card:nth-child(2)::before{background-image:url(images/gallery/cleanliness-drive-1.jpg)}
 .why-card:nth-child(3)::before{background-image:url(images/gallery/computer-lab.jpg)}
 .why-card:nth-child(4)::before{background-image:url(images/gallery/bank-trip.jpg)}
-.why-card:nth-child(2){--d:.1s}
-.why-card:nth-child(3){--d:.2s}
-.why-card:nth-child(4){--d:.3s}
+.why-card:nth-child(2){--i:1}
+.why-card:nth-child(3){--i:2}
+.why-card:nth-child(4){--i:3}
 .why-card:hover{translate:0 -4px;box-shadow:0 18px 40px rgba(0,0,0,.3)}
 .why-card:hover::before{filter:blur(6px)}
 .why-card i{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:rgba(108,36,58,.08);color:var(--primary)}
@@ -282,4 +284,4 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 @keyframes glow{50%{text-shadow:0 0 1px rgba(255,255,255,.63),0 0 8px rgba(255,236,200,.6),0 0 18px rgba(255,236,200,.35)}}
 
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}.marquee-track,.marquee-group span,.hero-slides img{animation:none}.hero-text>*{animation:none;opacity:1;transform:none}.reveal{opacity:1;transform:none}.mission-media::before{animation:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.marquee-track,.marquee-group span,.hero-slides img{animation:none}.hero-text>*{animation:none;opacity:1;transform:none}.reveal,.reveal-right{opacity:1;transform:none}.mission-media::before{animation:none}}

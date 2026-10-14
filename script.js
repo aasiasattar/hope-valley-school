@@ -61,9 +61,12 @@ hero.addEventListener("touchend", e => {
 play();
 
 const reveal = new IntersectionObserver((entries, obs) => entries.forEach(entry => {
+  const replay = entry.target.classList.contains("reveal-right");
   if (entry.isIntersecting) {
     entry.target.classList.add("is-in");
-    obs.unobserve(entry.target);
+    if (!replay) obs.unobserve(entry.target);
+  } else if (replay) {
+    entry.target.classList.remove("is-in");
   }
 }), { rootMargin: "0px 0px -10%" });
-document.querySelectorAll(".reveal").forEach(el => reveal.observe(el));
+document.querySelectorAll(".reveal,.reveal-right").forEach(el => reveal.observe(el));
