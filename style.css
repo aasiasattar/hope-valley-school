@@ -100,6 +100,21 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 .eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;font-weight:600;color:var(--sage-ink)}
 .script-sub{font-family:var(--script);font-weight:600;font-size:1.5rem;line-height:1.2;color:var(--bright)}
 
+/* trust intro + pillars */
+.trust-block{display:flex;flex-direction:column;gap:clamp(28px,4vw,40px)}
+.trust-intro{display:flex;flex-direction:column;align-items:center;gap:.9rem;max-width:760px;margin:0 auto;text-align:center}
+.trust-intro h2{margin:0;font-family:var(--head);font-weight:600;font-size:clamp(1.7rem,3vw,2.4rem);line-height:1.25;color:var(--primary)}
+.trust-intro p{margin:0}
+
+.pillars{display:grid;gap:1rem;margin:0;padding:0;list-style:none}
+.pillar{display:flex;flex-direction:column;align-items:center;gap:.5rem;padding:1.6rem 1.25rem;text-align:center;background:var(--bg);border:1px solid rgba(108,36,58,.12);border-radius:16px;transition:opacity .7s ease var(--d,0s),transform .7s ease var(--d,0s),translate .4s ease,box-shadow .4s ease}
+.pillar:nth-child(2){--d:.12s}
+.pillar:nth-child(3){--d:.24s}
+.pillar:hover{translate:0 -4px;box-shadow:0 14px 30px rgba(42,31,34,.1)}
+.pillar i{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:rgba(143,165,139,.2);color:var(--sage-ink)}
+.pillar h3{margin:0;font-family:var(--head);font-weight:600;font-size:1.05rem;color:var(--primary)}
+.pillar p{margin:0;font-size:.9rem;color:var(--muted)}
+
 /* about */
 .about{display:flex;flex-direction:column;gap:clamp(40px,6vw,72px);max-width:1240px;margin:0 auto;padding:clamp(64px,8vw,104px) var(--pad)}
 .about-row{display:grid;gap:clamp(44px,6vw,64px)}
@@ -161,6 +176,7 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
   .hero-tag{white-space:nowrap}
 
   /* about: image left, copy right; principal stat beside the text */
+  .pillars{grid-template-columns:repeat(3,1fr);gap:1.25rem}
   .about-row{grid-template-columns:45% 1fr;align-items:center}
   .principal{grid-template-columns:28% 1fr}
   .principal-stat{justify-content:center;padding-right:clamp(20px,3vw,40px);border-right:1px solid rgba(108,36,58,.18)}
