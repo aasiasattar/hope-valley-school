@@ -64,8 +64,7 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 
   /* row 2: trust lockup | tabs | contact pill */
   .nav-tabs{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;position:static;height:46px;padding:0 var(--pad);gap:1rem}
-  .tabs-brand{display:flex;opacity:0;pointer-events:none;transition:opacity .45s ease}
-  .nav.is-scrolled .tabs-brand{opacity:1;pointer-events:auto}
+  .tabs-brand{display:flex}
   .tabs{flex-direction:row;gap:2rem}
   .tabs a{padding:0}
   .pill{justify-self:end;align-self:center;padding:.35rem 1.2rem;font-size:.9rem}
