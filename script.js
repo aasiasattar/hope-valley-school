@@ -1,5 +1,8 @@
-// Map embed — swap this one URL to move the pin.
-const MAP_SRC = "https://www.google.com/maps?q=Malah+Malot+Haji+Chowk+Islamabad&z=15&output=embed";
+// Map location — swap this one query to move the pin; the embed and the
+// footer address link both derive from it.
+const MAP_QUERY = "Haji Chowk Bahria Enclave Islamabad";
+const MAP_SRC = `https://www.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&z=15&output=embed`;
+const MAP_LINK = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAP_QUERY)}`;
 
 // Gallery photos — add a line here and it appears on the page.
 const gallery = [
@@ -190,3 +193,4 @@ showOrb(0);
 if (!calm) setInterval(() => showOrb(orb + 1), 6000);
 
 document.getElementById("contact-map").src = MAP_SRC;
+document.getElementById("foot-address").href = MAP_LINK;
