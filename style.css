@@ -328,6 +328,7 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 /* contact */
 .contact{position:relative;overflow-x:clip;padding:48px var(--pad) 40px}
 .contact::before{content:"";position:absolute;inset:0 0 auto;height:160px;background:linear-gradient(180deg,rgba(250,246,242,.94),rgba(250,246,242,0))}
+.contact::after{content:"";position:absolute;inset:auto 0 0;height:64px;pointer-events:none;background:linear-gradient(180deg,rgba(74,22,39,0),rgba(74,22,39,.5))}
 .contact-inner{position:relative;z-index:1;display:flex;flex-direction:column;gap:36px;max-width:1200px;margin:0 auto}
 .contact-head{display:flex;flex-direction:column;align-items:center;gap:.5rem;text-align:center;transition:opacity 1.2s ease,transform 1.2s ease}
 .contact-row{display:grid;gap:28px;align-items:stretch}
@@ -347,8 +348,8 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 
 /* footer */
 .foot{position:relative;z-index:0;overflow:hidden;padding:64px var(--pad) 96px;color:var(--bg)}
-.foot::before{content:"";position:absolute;inset:0;z-index:-3;background:url(images/gallery/annual-day-2017.jpg) center/cover;filter:blur(8px);transform:scale(1.12);-webkit-mask-image:linear-gradient(180deg,transparent 0,rgba(0,0,0,.3) 16px,rgba(0,0,0,.75) 32px,#000 48px);mask-image:linear-gradient(180deg,transparent 0,rgba(0,0,0,.3) 16px,rgba(0,0,0,.75) 32px,#000 48px)}
-.foot::after{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(120deg,rgba(74,22,39,.94) 0%,rgba(108,36,58,.88) 45%,rgba(40,64,44,.92) 100%);-webkit-mask-image:linear-gradient(180deg,transparent 0,rgba(0,0,0,.3) 16px,rgba(0,0,0,.75) 32px,#000 48px);mask-image:linear-gradient(180deg,transparent 0,rgba(0,0,0,.3) 16px,rgba(0,0,0,.75) 32px,#000 48px)}
+.foot::before{content:"";position:absolute;inset:0;z-index:-3;background:url(images/gallery/annual-day-2017.jpg) center/cover;filter:blur(8px);transform:scale(1.12);-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.5) 0,rgba(0,0,0,.8) 24px,#000 56px);mask-image:linear-gradient(180deg,rgba(0,0,0,.5) 0,rgba(0,0,0,.8) 24px,#000 56px)}
+.foot::after{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(120deg,rgba(74,22,39,.94) 0%,rgba(108,36,58,.88) 45%,rgba(40,64,44,.92) 100%);-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.5) 0,rgba(0,0,0,.8) 24px,#000 56px);mask-image:linear-gradient(180deg,rgba(0,0,0,.5) 0,rgba(0,0,0,.8) 24px,#000 56px)}
 .foot-leaf{position:absolute;right:24px;bottom:24px;z-index:-1;width:160px;height:130px;background:url(images/logo-icon-light.png) no-repeat center/contain;opacity:.04;pointer-events:none}
 .foot-inner{position:relative;display:grid;gap:32px;max-width:1200px;margin:0 auto;text-align:center;justify-items:center}
 .foot-brand{display:flex;flex-direction:column;align-items:center;gap:.5rem}
@@ -384,7 +385,7 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
   .contact-cards{grid-template-columns:1fr 1fr}
   .foot-inner{grid-template-columns:1.3fr 1fr 1.2fr;gap:48px;text-align:left;justify-items:start}
   .foot-brand,.foot-links,.foot-contact{align-items:flex-start}
-  .foot-bar{flex-direction:row;justify-content:space-between}
+  .foot-bar{flex-direction:row;justify-content:space-between;padding-right:96px}
 }
 
 @media (min-width:1100px){
