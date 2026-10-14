@@ -3,6 +3,7 @@ const gallery = [
   { file: "cleanliness-drive-1.jpg", title: "14 August Cleanliness Drive" },
   { file: "cleanliness-drive-2.jpg", title: "Whole school with handmade placards" },
   { file: "cleanliness-drive-3.jpg", title: "Clearing the roadside" },
+  { file: "independence-day.jpg", title: "Independence Day celebration" },
   { file: "convocation-2023-1.jpg", title: "Jungle tableau, Convocation 2023-24" },
   { file: "convocation-2023-2.jpg", title: "Solar system performance, Convocation 2023-24" },
   { file: "convocation-2023-3.jpg", title: "Graduates in cap and gown, Convocation 2023-24" },
