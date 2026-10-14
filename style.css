@@ -184,8 +184,10 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 .mission-card .mission-text{margin:0;font-family:var(--body);font-weight:400;font-size:1.08rem;line-height:1.7;color:var(--bg)}
 
 /* why hope valley */
-.why-band{margin-top:40px;padding:40px var(--pad);background:linear-gradient(150deg,#5A1C30,#6C243A 60%,#85304B);color:var(--bg)}
-.why-inner{max-width:1200px;margin:0 auto}
+.why-band{position:relative;overflow:hidden;margin-top:64px;padding:40px var(--pad);background:linear-gradient(150deg,#5A1C30,#6C243A 60%,#85304B);color:var(--bg)}
+.why-band::before{content:"";position:absolute;inset:0;background:url(images/gallery/convocation-2016-2.jpg) center/cover;filter:blur(8px);transform:scale(1.12)}
+.why-band::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(90,28,48,.92) 0%,rgba(108,36,58,.85) 45%,rgba(47,74,51,.88) 100%)}
+.why-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto}
 .why-head{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:.35rem;margin-bottom:28px;text-align:center}
 .why-title{display:inline-flex;align-items:center;gap:.7rem;margin:0;font-family:var(--head);font-style:italic;font-weight:600;font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.2}
 .why-title span{background-image:linear-gradient(90deg,#F3D9A4,#FAF6F2);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -207,7 +209,7 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 .why-card:hover::before{filter:blur(6px)}
 .why-card i{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:rgba(108,36,58,.08);color:var(--primary)}
 .why-card h3{margin:0;font-family:var(--head);font-weight:600;font-size:1.2rem;background-image:linear-gradient(90deg,#6C243A,#9B2C4E 50%,#6F8A6B);-webkit-background-clip:text;background-clip:text;color:transparent}
-.why-card p{margin:0;font-size:1rem;line-height:1.65;background-image:linear-gradient(90deg,#5A1C30,#3E5C40);-webkit-background-clip:text;background-clip:text;color:transparent}
+.why-card p{margin:0;font-size:1.02rem;line-height:1.65;background-image:linear-gradient(90deg,#4A1627,#2F4A33);-webkit-background-clip:text;background-clip:text;color:transparent}
 
 @media (min-width:700px){
   .why-cards{grid-template-columns:1fr 1fr}
