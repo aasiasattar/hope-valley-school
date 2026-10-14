@@ -10,6 +10,7 @@ const gallery = [
   { file: "convocation-2023-1.jpg", title: "Jungle tableau, Convocation 2023-24" },
   { file: "convocation-2023-2.jpg", title: "Solar system performance, Convocation 2023-24" },
   { file: "convocation-2023-3.jpg", title: "Graduates in cap and gown, Convocation 2023-24" },
+  { file: "convocation-2023-4.jpg", title: "Graduates with their certificates, Convocation 2023-24" },
   { file: "convocation-2016-1.jpg", title: "Graduates on stage, Convocation 2016-17" },
   { file: "convocation-2016-2.jpg", title: "Welcome performance, Convocation 2016-17" },
   { file: "convocation-2016-3.jpg", title: "Convocation Ceremony 2016-17" },
