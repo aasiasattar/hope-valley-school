@@ -154,8 +154,7 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 .principal-body h3{margin:0;font-family:var(--head);font-weight:600;font-size:1.6rem;text-wrap:balance;color:var(--primary)}
 .principal-body .principal-role{margin-top:-.55rem;font-size:.85rem;line-height:1.5;color:var(--muted)}
 .principal-body p{margin:0;max-width:66ch;font-size:1.05rem;line-height:1.7;color:var(--text)}
-.principal-body blockquote{position:relative;margin:.4rem 0;padding-left:3.25rem;font-family:var(--head);font-style:italic;font-size:1.35rem;line-height:1.45;text-wrap:balance;color:var(--primary)}
-.principal-body blockquote svg{position:absolute;top:-.3rem;left:0;color:var(--accent);opacity:.8}
+.principal-body blockquote{margin:.4rem 0;padding-left:20px;border-left:3px solid var(--gold-line);font-family:var(--head);font-style:italic;font-size:1.35rem;line-height:1.45;text-wrap:balance;color:var(--primary)}
 
 @media (min-width:900px){
   :root{--row1:56px;--nav-h:102px}
