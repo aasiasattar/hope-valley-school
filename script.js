@@ -1,6 +1,12 @@
 const nav = document.getElementById("nav");
 const toggle = document.getElementById("nav-toggle");
 const tabs = document.getElementById("nav-tabs");
+const socials = document.querySelector(".socials");
+const wide = matchMedia("(min-width:900px)");
+
+const place = () => (wide.matches ? document.getElementById("nav-top") : tabs).append(socials);
+wide.addEventListener("change", place);
+place();
 
 addEventListener("scroll", () => nav.classList.toggle("is-scrolled", scrollY > 8), { passive: true });
 
@@ -15,7 +21,7 @@ tabs.addEventListener("click", e => {
   }
 });
 
-const links = [...tabs.querySelectorAll(".tabs a")];
+const links = [...document.querySelectorAll(".tabs a")];
 const spy = new IntersectionObserver(
   entries => entries.forEach(entry => {
     if (entry.isIntersecting)
