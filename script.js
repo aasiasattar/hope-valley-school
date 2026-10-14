@@ -97,7 +97,7 @@ document.querySelectorAll(".reveal,.reveal-right,.reveal-left").forEach(el => re
 
 const grid = document.getElementById("gallery-grid");
 grid.innerHTML = gallery.map((p, i) =>
-  `<button class="shot reveal${i > 8 ? " extra" : ""}" type="button" data-i="${i}" style="--i:${i}">
+  `<button class="shot reveal${i > 8 ? " extra" : ""}" type="button" data-i="${i}" style="--i:${i};--src:url(images/gallery/${p.file})">
      <img src="images/gallery/${p.file}" alt="${p.title}" loading="lazy">
      <span>${p.title}</span>
    </button>`).join("");
@@ -146,3 +146,38 @@ lb.addEventListener("touchend", e => {
   const dx = e.changedTouches[0].clientX - lbX;
   if (Math.abs(dx) > 40) openShot(shot + (dx < 0 ? 1 : -1));
 }, { passive: true });
+
+/* orbit showcase */
+const ring = document.getElementById("orbit-ring");
+const picks = gallery.slice(0, 8);
+const calm = matchMedia("(prefers-reduced-motion:reduce)").matches;
+
+ring.innerHTML = picks.map((p, i) =>
+  `<button class="orb" type="button" data-i="${i}" style="--a:${(i / picks.length) * 360}deg" aria-label="${p.title}">
+     <img src="images/gallery/${p.file}" alt="" loading="lazy">
+   </button>`).join("");
+
+const orbs = [...ring.children];
+const shotEl = document.getElementById("featured-shot");
+const capEl = document.getElementById("featured-cap");
+let orb = 0;
+
+const showOrb = i => {
+  orb = (i + picks.length) % picks.length;
+  const p = picks[orb];
+  shotEl.style.setProperty("--src", `url(images/gallery/${p.file})`);
+  shotEl.innerHTML = `<img src="images/gallery/${p.file}" alt="${p.title}">`;
+  capEl.textContent = p.title;
+  orbs.forEach((o, k) => o.classList.toggle("on", k === orb));
+  if (!calm) shotEl.firstElementChild.animate(
+    [{ opacity: 0, transform: "translateX(60px)" }, { opacity: 1, transform: "none" }],
+    { duration: 1000, easing: "cubic-bezier(.22,.61,.36,1)" });
+};
+
+ring.addEventListener("click", e => {
+  const btn = e.target.closest(".orb");
+  if (btn) showOrb(+btn.dataset.i);
+});
+
+showOrb(0);
+if (!calm) setInterval(() => showOrb(orb + 1), 5000);
