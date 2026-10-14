@@ -1,3 +1,6 @@
+// Map embed — swap this one URL to move the pin.
+const MAP_SRC = "https://www.google.com/maps?q=Malah+Malot+Haji+Chowk+Islamabad&z=15&output=embed";
+
 // Gallery photos — add a line here and it appears on the page.
 const gallery = [
   { file: "cleanliness-drive-1.jpg", title: "14 August Cleanliness Drive" },
@@ -184,3 +187,5 @@ ring.addEventListener("click", e => {
 
 showOrb(0);
 if (!calm) setInterval(() => showOrb(orb + 1), 6000);
+
+document.getElementById("contact-map").src = MAP_SRC;
