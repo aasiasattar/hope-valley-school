@@ -163,26 +163,41 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 .mission-head{display:flex;flex-direction:column;align-items:center;gap:.5rem;text-align:center}
 .mission-head h2{margin:0;font-family:var(--head);font-weight:600;font-size:clamp(1.5rem,3.4vw,1.9rem);line-height:1.25;text-wrap:balance}
 
-.mission-row{display:grid;gap:48px;align-items:center}
-.mission-media{position:relative;width:100%;max-width:280px;margin:0 auto}
-.mission-media img{position:relative;z-index:1}
-.mission-media img{display:block;width:100%;height:auto;border-radius:999px 999px 24px 24px;box-shadow:0 18px 40px rgba(42,31,34,.16)}
+.mission-grid{display:flex;flex-direction:column;gap:20px}
+.mission-col{display:flex;flex-direction:column;gap:20px}
+.mission-media{order:-1;position:relative;width:100%;max-width:280px;margin:0 auto}
+.mission-media img{display:block;position:relative;z-index:1;width:100%;height:100%;object-fit:cover;border-radius:999px 999px 24px 24px;box-shadow:0 18px 40px rgba(42,31,34,.16)}
 .mission-media::before{content:"";position:absolute;inset:14px -14px -14px 14px;z-index:0;border:2px solid rgba(233,201,139,.9);border-radius:999px 999px 24px 24px;background:radial-gradient(ellipse at center,rgba(143,165,139,.25) 45%,rgba(255,240,210,.55) 100%);box-shadow:0 0 12px rgba(233,201,139,.7),0 0 28px rgba(143,165,139,.55);filter:blur(2px);animation:arch-glow 3.5s ease-in-out infinite}
 
 .mission-cards{display:flex;flex-direction:column;gap:20px}
-.mission-card{position:relative;overflow:hidden;z-index:1;display:flex;flex-direction:column;align-items:flex-start;gap:.9rem;padding:1.75rem;border-radius:18px;color:var(--bg);box-shadow:0 12px 32px rgba(0,0,0,.18);transition:opacity .7s ease,transform .7s ease,translate .5s ease,box-shadow .5s ease}
+.mission-card{position:relative;overflow:hidden;z-index:1;display:flex;flex-direction:column;align-items:flex-start;gap:.8rem;padding:22px;border-radius:18px;color:var(--bg);box-shadow:0 12px 32px rgba(0,0,0,.18);transition:opacity .7s ease,transform .7s ease,translate .5s ease,box-shadow .5s ease}
 .mission-card::before{content:"";position:absolute;inset:0;z-index:-2;background-position:center;background-size:cover;filter:blur(5px);transform:scale(1.12);transition:filter .5s ease}
 .mission-card::after{content:"";position:absolute;inset:0;z-index:-1}
-.mission-card:nth-child(1)::before{background-image:url(images/gallery/insect-museum-1.jpg)}
-.mission-card:nth-child(1)::after{background:linear-gradient(150deg,rgba(108,36,58,.88),rgba(133,48,75,.72))}
-.mission-card:nth-child(2)::before{background-image:url(images/gallery/zoo-trip.jpg)}
-.mission-card:nth-child(2)::after{background:linear-gradient(150deg,rgba(62,92,64,.9),rgba(111,138,107,.75))}
+.mission-card.maroon::after{background:linear-gradient(150deg,rgba(108,36,58,.88),rgba(133,48,75,.72))}
+.mission-card.sage::after{background:linear-gradient(150deg,rgba(62,92,64,.9),rgba(111,138,107,.75))}
+.mc-mission::before{background-image:url(images/gallery/insect-museum-1.jpg)}
+.mc-vision::before{background-image:url(images/gallery/zoo-trip.jpg)}
+.mc-why::before{background-image:url(images/gallery/speech-contest-2017.jpg)}
+.mc-community::before{background-image:url(images/gallery/cleanliness-drive-1.jpg)}
+.mc-tech::before{background-image:url(images/gallery/computer-lab.jpg)}
+.mc-cost::before{background-image:url(images/gallery/bank-trip.jpg)}
 .mission-card:hover{translate:0 -4px;box-shadow:0 18px 42px rgba(0,0,0,.24)}
 .mission-card:hover::before{filter:blur(3px)}
 .card-head{display:flex;align-items:center;gap:.75rem}
 .mission-card i{display:grid;place-items:center;flex:none;width:44px;height:44px;border-radius:50%;background:rgba(250,246,242,.15);color:var(--gold)}
 .card-label{margin:0;font-family:var(--head);font-style:italic;font-size:1.3rem;background-image:linear-gradient(90deg,#F3D9A4,#FAF6F2);-webkit-background-clip:text;background-clip:text;color:transparent}
-.mission-card .mission-text{margin:0;font-family:var(--body);font-weight:400;font-size:1.08rem;line-height:1.7;color:var(--bg)}
+.mission-card .mission-text{margin:0;font-family:var(--body);font-weight:400;font-size:1rem;line-height:1.7;color:var(--bg)}
+
+@media (min-width:700px){
+  .mission-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .mission-media{grid-column:1/-1;max-width:300px}
+}
+
+@media (min-width:1100px){
+  .mission-inner{max-width:1200px}
+  .mission-grid{grid-template-columns:1fr 320px 1fr;align-items:stretch}
+  .mission-media{order:0;grid-column:auto;max-width:320px;margin:0}
+}
 
 @media (min-width:900px){
   :root{--row1:56px;--nav-h:102px}
@@ -225,8 +240,6 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
   .about-row{grid-template-columns:45% 1fr;align-items:center}
   .principal{grid-template-columns:28% 1fr}
   .principal-stat{min-height:100%;border-radius:24px 0 0 24px}
-  .mission-row{grid-template-columns:40% 1fr}
-  .mission-media{max-width:420px}
 
   .principal-body{padding-right:132px;padding-bottom:clamp(28px,4vw,52px);border-radius:0 24px 24px 0}
   .hero-nav{opacity:0}
