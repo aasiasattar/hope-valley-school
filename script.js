@@ -1,18 +1,21 @@
 const nav = document.getElementById("nav");
 const toggle = document.getElementById("nav-toggle");
-const menu = document.getElementById("nav-menu");
+const tabs = document.getElementById("nav-tabs");
 
 addEventListener("scroll", () => nav.classList.toggle("is-scrolled", scrollY > 8), { passive: true });
 
 toggle.addEventListener("click", () =>
-  toggle.setAttribute("aria-expanded", toggle.getAttribute("aria-expanded") === "false")
+  toggle.setAttribute("aria-expanded", nav.classList.toggle("is-open"))
 );
 
-menu.addEventListener("click", e => {
-  if (e.target.tagName === "A") toggle.setAttribute("aria-expanded", "false");
+tabs.addEventListener("click", e => {
+  if (e.target.closest("a")) {
+    nav.classList.remove("is-open");
+    toggle.setAttribute("aria-expanded", "false");
+  }
 });
 
-const links = [...menu.querySelectorAll("a:not(.pill)")];
+const links = [...tabs.querySelectorAll(".tabs a")];
 const spy = new IntersectionObserver(
   entries => entries.forEach(entry => {
     if (entry.isIntersecting)
