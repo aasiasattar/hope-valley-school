@@ -391,7 +391,7 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
   .why-cards{grid-template-columns:repeat(4,1fr)}
   .gtile{width:290px;height:220px}
   .contact-row{grid-template-columns:1fr 1fr}
-  .wa-float{right:24px;bottom:96px;width:58px;height:58px}
+  .wa-float{right:24px;bottom:24px;width:58px;height:58px}
   .foot{padding-bottom:28px}
   .orbit-wrap{grid-template-columns:40% 60%;gap:40px}
   .orbit{width:440px;height:440px;margin:0 0 0 calc(40px - var(--edge));justify-self:start;--r:178px;--orb:84px}
