@@ -99,15 +99,15 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .reveal.is-in{opacity:1;transform:none}
 .rule{width:60px;height:1px;background:var(--accent)}
-.about .section-title{display:inline-flex;align-items:center;gap:.7rem;margin:0;font-family:var(--head);font-style:italic;font-weight:600;font-size:clamp(1.6rem,2.6vw,2.1rem);line-height:1.2}
-.about .section-title span{background-image:linear-gradient(90deg,#6C243A,#9B2C4E 50%,#6F8A6B);-webkit-background-clip:text;background-clip:text;color:transparent}
-.about .section-title i{font-style:normal;font-size:.55em;color:var(--accent)}
+.about .section-title,.mission .section-title{display:inline-flex;align-items:center;gap:.7rem;margin:0;font-family:var(--head);font-style:italic;font-weight:600;font-size:clamp(1.6rem,2.6vw,2.1rem);line-height:1.2}
+.about .section-title span,.mission .section-title span{background-image:linear-gradient(90deg,#6C243A,#9B2C4E 50%,#6F8A6B);-webkit-background-clip:text;background-clip:text;color:transparent}
+.about .section-title i,.mission .section-title i{font-style:normal;font-size:.55em;color:var(--accent)}
 .about .script-sub{font-family:var(--script);font-weight:600;font-size:1.6rem;line-height:1.2;color:var(--rose)}
 
 /* trust intro + pillars */
 .trust-band{position:relative;overflow:hidden;padding:40px var(--pad) 84px}
 .trust-band::before{content:"";position:absolute;inset:0;background:url(images/gallery/cleanliness-drive-2.jpg) center/cover;filter:blur(10px);transform:scale(1.15)}
-.trust-band::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(250,246,242,.86),rgba(237,230,243,.88))}
+.trust-band::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(250,246,242,.74),rgba(237,230,243,.78))}
 .trust-intro{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:.9rem;max-width:760px;margin:0 auto;text-align:center}
 .trust-intro h2{margin:0;font-family:var(--head);font-weight:600;font-size:clamp(1.7rem,3vw,2.4rem);line-height:1.25;text-wrap:balance;color:var(--primary)}
 .trust-intro p{margin:0;font-size:1.05rem;line-height:1.7;color:var(--text)}
@@ -156,6 +156,24 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 .principal-body p{margin:0;max-width:66ch;font-size:1.05rem;line-height:1.7;color:var(--text)}
 .principal-body blockquote{margin:.4rem 0;padding-left:20px;border-left:3px solid var(--gold-line);font-family:var(--head);font-style:italic;font-size:1.35rem;line-height:1.45;text-wrap:balance;color:var(--primary)}
 
+/* mission */
+.mission{background:#EEF2EC;padding:44px var(--pad)}
+.mission-inner{display:flex;flex-direction:column;gap:40px;max-width:1120px;margin:0 auto}
+.mission-head{display:flex;flex-direction:column;align-items:center;gap:.5rem;text-align:center}
+.mission-head h2{margin:0;font-family:var(--head);font-weight:600;font-size:clamp(1.5rem,3.4vw,1.9rem);line-height:1.25;text-wrap:balance;color:var(--primary)}
+
+.mission-row{display:grid;gap:clamp(36px,5vw,56px);align-items:center}
+.mission-media{position:relative;width:100%;max-width:280px;margin:0 auto}
+.mission-media img{display:block;width:100%;height:auto;border:4px solid var(--bg);border-radius:999px 999px 24px 24px;box-shadow:0 18px 40px rgba(42,31,34,.16)}
+.mission-media::before{content:"";position:absolute;inset:16px -16px -16px 16px;border:2px solid var(--accent);border-radius:999px 999px 24px 24px;z-index:-1}
+
+.mission-cards{display:flex;flex-direction:column;gap:20px}
+.mission-card{display:flex;flex-direction:column;align-items:flex-start;gap:.7rem;padding:1.75rem;background:#fff;border-left:4px solid var(--primary);border-radius:16px;box-shadow:0 8px 24px rgba(42,31,34,.08)}
+.mission-card i{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:rgba(108,36,58,.08);color:var(--primary)}
+.mission-card .eyebrow{display:flex;align-items:center;gap:.6rem;margin:0;text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;font-weight:600;color:var(--sage-ink)}
+.mission-card .eyebrow::before{content:"";width:24px;height:1px;background:currentColor}
+.mission-card .mission-text{margin:0;font-family:var(--head);font-size:1.2rem;line-height:1.55;color:var(--text)}
+
 @media (min-width:900px){
   :root{--row1:56px;--nav-h:102px}
 
@@ -197,6 +215,10 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
   .about-row{grid-template-columns:45% 1fr;align-items:center}
   .principal{grid-template-columns:28% 1fr}
   .principal-stat{min-height:100%;border-radius:24px 0 0 24px}
+  .mission{padding:64px var(--pad)}
+  .mission-row{grid-template-columns:40% 1fr}
+  .mission-media{max-width:340px;margin:0}
+
   .principal-body{padding-right:132px;padding-bottom:clamp(28px,4vw,52px);border-radius:0 24px 24px 0}
   .hero-nav{opacity:0}
   .hero:hover .hero-nav,.hero-nav:focus-visible{opacity:1}
