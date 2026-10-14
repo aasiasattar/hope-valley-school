@@ -31,3 +31,31 @@ const spy = new IntersectionObserver(
   { rootMargin: "-50% 0px" }
 );
 document.querySelectorAll("main section").forEach(s => spy.observe(s));
+
+const hero = document.querySelector(".hero");
+const slides = [...hero.querySelectorAll(".hero-slides img")];
+const dots = [...hero.querySelectorAll(".hero-dots button")];
+let at = 0, timer;
+
+const show = n => {
+  at = (n + slides.length) % slides.length;
+  slides.forEach((img, k) => img.classList.toggle("is-active", k === at));
+  dots.forEach((dot, k) => dot.classList.toggle("is-active", k === at));
+};
+const play = () => (timer = setInterval(() => show(at + 1), 6000));
+const stop = () => clearInterval(timer);
+
+hero.addEventListener("mouseenter", stop);
+hero.addEventListener("mouseleave", play);
+hero.querySelector(".prev").addEventListener("click", () => show(at - 1));
+hero.querySelector(".next").addEventListener("click", () => show(at + 1));
+dots.forEach((dot, k) => dot.addEventListener("click", () => show(k)));
+
+let swipe = 0;
+hero.addEventListener("touchstart", e => (swipe = e.touches[0].clientX), { passive: true });
+hero.addEventListener("touchend", e => {
+  const dx = e.changedTouches[0].clientX - swipe;
+  if (Math.abs(dx) > 40) show(at + (dx < 0 ? 1 : -1));
+}, { passive: true });
+
+play();
