@@ -87,7 +87,7 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-total)}
 .marquee:hover .marquee-track{animation-play-state:paused}
 .marquee-group{display:flex;flex:none;align-items:center;justify-content:space-around;gap:2.5rem;padding-right:2.5rem;min-width:100vw;font-family:var(--script);font-size:1.4rem;color:var(--bright);white-space:nowrap}
 .sep{font-style:normal;font-size:.9rem;color:var(--accent)}
-@keyframes marquee{to{transform:translateX(-50%)}}
+@keyframes marquee{from{transform:translateX(-50%)}}
 
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}.marquee-track{animation:none}}
