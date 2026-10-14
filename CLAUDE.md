@@ -20,7 +20,10 @@ Show "Registered under Charity Act 2021" (small, trust signal).
 - Avoid the "AI look": no purple-blue gradients, glowing blobs, glassmorphism.
 
 ## Images
-- The original photos in images/ must never be deleted or overwritten.
+- Originals live in _originals/ (gitignored, local only). Never delete, rename or overwrite them.
+- images/ holds only web copies: logo.jpg, about.jpg, hero/hero-1..4.jpg, gallery/.
+- Logo is images/logo.jpg.
+- Web copies are max 1600px wide, JPG quality ~80.
 - Staff must be able to replace a photo by keeping the same file name.
 - Gallery items live in ONE array at the top of script.js: { file, title }.
 - Alt text on every image; loading="lazy" except hero.
