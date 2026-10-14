@@ -415,8 +415,8 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
   .tabs svg{width:16px;height:16px;transition:color .3s ease}
   .tabs a::after{content:"";position:absolute;left:.75rem;right:.75rem;bottom:6px;height:2px;border-radius:2px;background:linear-gradient(90deg,transparent,#F3D9A4,#E9C98B,#F3D9A4,transparent);box-shadow:0 0 6px rgba(243,217,164,.45);transform:scaleX(0);transform-origin:center;transition:transform .35s ease-out}
   .tabs a:hover,.tabs a:focus-visible{color:#fff;background:rgba(250,246,242,.08);box-shadow:none}
-  .tabs a:hover svg,.tabs a:focus-visible svg,.tabs a.is-active svg{color:var(--gold)}
-  .tabs a.is-active{color:var(--gold);background:none;box-shadow:none}
+  .tabs a:hover svg,.tabs a:focus-visible svg{color:var(--gold)}
+  .tabs a.is-active{color:#fff;background:none;box-shadow:none}
   .tabs a:hover::after,.tabs a:focus-visible::after,.tabs a.is-active::after{transform:scaleX(1)}
   .pill{justify-self:end;align-self:center;min-height:0;margin:0;padding:.35rem 1.2rem;font-size:.9rem}
 
