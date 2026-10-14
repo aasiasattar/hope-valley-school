@@ -468,7 +468,7 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 .marquee-track{display:flex;animation:marquee 45s linear infinite}
 .marquee:hover .marquee-track{animation-play-state:paused}
 .marquee-group{display:flex;flex:none;align-items:center;justify-content:space-around;gap:2.5rem;padding-right:2.5rem;min-width:100vw;font-family:var(--script);font-weight:600;font-size:1.4rem;color:var(--bright);white-space:nowrap}
-.marquee-group span{text-shadow:var(--glow);animation:glow 3s ease-in-out infinite}
+.marquee-group span{background-image:linear-gradient(90deg,#7E1F3D 0%,#B8862F 50%,#7E1F3D 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 6px rgba(243,217,164,.55))}
 .sep{font-style:normal;font-size:.9rem;color:var(--accent)}
 @keyframes marquee{from{transform:translateX(-50%)}}
 @keyframes credit-glow{50%{text-shadow:0 0 6px rgba(243,217,164,.33),0 0 14px rgba(243,217,164,.15)}}
@@ -483,7 +483,6 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 @keyframes fade-in{from{opacity:0}}
 @keyframes zoom-in{from{opacity:0;scale:.92}}
 @keyframes arch-glow{50%{box-shadow:0 0 12px rgba(233,201,139,.49),0 0 28px rgba(143,165,139,.39)}}
-@keyframes glow{50%{text-shadow:0 0 1px rgba(255,255,255,.63),0 0 8px rgba(255,236,200,.6),0 0 18px rgba(255,236,200,.35)}}
 
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}.marquee-track,.marquee-group span,.hero-slides img{animation:none}.hero-text>*{animation:none;opacity:1;transform:none}.reveal,.reveal-right,.reveal-left{opacity:1;transform:none}.mission-media::before,.polaroids.is-in .polaroid,.life-row.is-in i,.lightbox,.lb-body,.orbit-ring,.orb img,.gtrack,body::before,.wa-float::before,.credit{animation:none}.grow{overflow-x:auto}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.marquee-track,.hero-slides img{animation:none}.hero-text>*{animation:none;opacity:1;transform:none}.reveal,.reveal-right,.reveal-left{opacity:1;transform:none}.mission-media::before,.polaroids.is-in .polaroid,.life-row.is-in i,.lightbox,.lb-body,.orbit-ring,.orb img,.gtrack,body::before,.wa-float::before,.credit{animation:none}.grow{overflow-x:auto}}
