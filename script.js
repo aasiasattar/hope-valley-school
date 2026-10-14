@@ -59,3 +59,11 @@ hero.addEventListener("touchend", e => {
 }, { passive: true });
 
 play();
+
+const reveal = new IntersectionObserver((entries, obs) => entries.forEach(entry => {
+  if (entry.isIntersecting) {
+    entry.target.classList.add("is-in");
+    obs.unobserve(entry.target);
+  }
+}), { rootMargin: "0px 0px -10%" });
+document.querySelectorAll(".reveal").forEach(el => reveal.observe(el));

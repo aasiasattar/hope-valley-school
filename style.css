@@ -2,6 +2,7 @@
   --primary:#6C243A;
   --primary-dark:#561B2E;
   --accent:#8FA58B;
+  --sage-ink:#5F7559;
   --bg:#FAF6F2;
   --text:#2A1F22;
   --muted:#8A6B74;
@@ -76,7 +77,7 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 .hero-text>:nth-child(5){animation-delay:.58s}
 .hero-text h1{font-family:var(--head);font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:clamp(2.2rem,5vw,4.2rem);line-height:1.1}
 .hero-tag{font-family:var(--script);font-weight:600;line-height:1.1;font-size:clamp(1.6rem,3vw,2.4rem);color:var(--gold);text-shadow:var(--glow)}
-.hero-rule{width:60px;height:1px;background:var(--accent)}
+
 .hero-school{font-family:var(--head);font-size:clamp(1.3rem,2.2vw,1.8rem)}
 .hero-sub{font-style:italic;font-size:1.05rem;opacity:.85}
 
@@ -91,6 +92,40 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 
 @keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.08)}}
 @keyframes rise{to{opacity:1;transform:none}}
+
+/* shared */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.is-in{opacity:1;transform:none}
+.rule{width:60px;height:1px;background:var(--accent)}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;font-weight:600;color:var(--sage-ink)}
+.script-sub{font-family:var(--script);font-weight:600;font-size:1.5rem;line-height:1.2;color:var(--bright)}
+
+/* about */
+.about{display:flex;flex-direction:column;gap:clamp(40px,6vw,72px);max-width:1240px;margin:0 auto;padding:clamp(64px,8vw,104px) var(--pad)}
+.about-row{display:grid;gap:clamp(44px,6vw,64px)}
+
+.about-media{position:relative;margin:0}
+.about-media::before{content:"";position:absolute;inset:14px -14px -14px 14px;border:1px solid var(--accent);border-radius:20px;z-index:-1}
+.about-media img{display:block;width:100%;height:auto;border-radius:20px;box-shadow:0 18px 40px rgba(42,31,34,.16)}
+.about-badge{position:absolute;right:-14px;bottom:-14px;display:grid;place-content:center;width:88px;height:88px;border-radius:50%;background:var(--primary);color:var(--bg);text-align:center;box-shadow:0 0 0 4px var(--bg)}
+.about-badge small{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+.about-badge strong{font-family:var(--head);font-weight:600;font-size:1.5rem;line-height:1.1}
+
+.about-copy{display:flex;flex-direction:column;align-items:flex-start;gap:1rem}
+.about-copy h2{margin:0;font-family:var(--head);font-weight:600;font-size:clamp(1.8rem,3.2vw,2.6rem);line-height:1.2;color:var(--primary)}
+.about-copy p{margin:0;max-width:60ch}
+.trust-line{display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:var(--muted)}
+
+/* principal card */
+.principal{display:grid;gap:clamp(24px,4vw,40px);background:var(--glass-tint);border-radius:24px;padding:clamp(28px,4vw,52px)}
+.principal-stat{display:flex;flex-direction:column;align-items:center;text-align:center}
+.principal-stat strong{font-family:var(--head);font-weight:600;font-size:clamp(3.2rem,8vw,4.5rem);line-height:1;color:var(--primary)}
+.principal-stat small{font-size:.9rem;color:var(--muted)}
+.principal-body{display:flex;flex-direction:column;gap:.9rem}
+.principal-body h3{margin:0;font-family:var(--head);font-weight:600;font-size:1.6rem;color:var(--primary)}
+.principal-body p{margin:0;max-width:66ch}
+.principal-body blockquote{position:relative;margin:.4rem 0;padding-left:3.25rem;font-family:var(--head);font-style:italic;font-size:1.35rem;line-height:1.45;color:var(--primary)}
+.principal-body blockquote svg{position:absolute;top:-.3rem;left:0;color:var(--accent);opacity:.55}
 
 @media (min-width:900px){
   :root{--row1:56px;--nav-h:102px}
@@ -124,6 +159,11 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
   .hero::after{background:linear-gradient(90deg,rgba(108,36,58,.75),rgba(108,36,58,.4) 40%,transparent 65%),linear-gradient(0deg,rgba(42,31,34,.45),transparent 35%)}
   .hero-text{align-items:flex-start;max-width:560px;padding-bottom:0;text-align:left}
   .hero-tag{white-space:nowrap}
+
+  /* about: image left, copy right; principal stat beside the text */
+  .about-row{grid-template-columns:45% 1fr;align-items:center}
+  .principal{grid-template-columns:28% 1fr}
+  .principal-stat{justify-content:center;padding-right:clamp(20px,3vw,40px);border-right:1px solid rgba(108,36,58,.18)}
   .hero-nav{opacity:0}
   .hero:hover .hero-nav,.hero-nav:focus-visible{opacity:1}
 }
@@ -139,4 +179,4 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 @keyframes glow{50%{text-shadow:0 0 1px rgba(255,255,255,.63),0 0 8px rgba(255,236,200,.6),0 0 18px rgba(255,236,200,.35)}}
 
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}.marquee-track,.marquee-group span,.hero-slides img{animation:none}.hero-text>*{animation:none;opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.marquee-track,.marquee-group span,.hero-slides img{animation:none}.hero-text>*{animation:none;opacity:1;transform:none}.reveal{opacity:1;transform:none}}
