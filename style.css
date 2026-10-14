@@ -100,7 +100,7 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 .reveal.is-in{opacity:1;transform:none}
 .rule{width:60px;height:1px;background:var(--accent)}
 .about .section-title,.mission .section-title{display:inline-flex;align-items:center;gap:.7rem;margin:0;font-family:var(--head);font-style:italic;font-weight:600;font-size:clamp(1.6rem,2.6vw,2.1rem);line-height:1.2}
-.about .section-title span,.mission .section-title span{background-image:linear-gradient(90deg,#6C243A,#9B2C4E 50%,#6F8A6B);-webkit-background-clip:text;background-clip:text;color:transparent}
+.section-title span,.mission-head h2{background-image:linear-gradient(90deg,#6C243A,#9B2C4E 50%,#6F8A6B);-webkit-background-clip:text;background-clip:text;color:transparent}
 .about .section-title i,.mission .section-title i{font-style:normal;font-size:.55em;color:var(--accent)}
 .about .script-sub{font-family:var(--script);font-weight:600;font-size:1.6rem;line-height:1.2;color:var(--rose)}
 
@@ -157,22 +157,32 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 .principal-body blockquote{margin:.4rem 0;padding-left:20px;border-left:3px solid var(--gold-line);font-family:var(--head);font-style:italic;font-size:1.35rem;line-height:1.45;text-wrap:balance;color:var(--primary)}
 
 /* mission */
-.mission{background:#EEF2EC;padding:44px var(--pad)}
-.mission-inner{display:flex;flex-direction:column;gap:40px;max-width:1120px;margin:0 auto}
+.mission{position:relative;background:#EEF2EC;padding:48px var(--pad) 44px}
+.mission::before{content:"";position:absolute;inset:0 0 auto;height:120px;background:linear-gradient(180deg,#FAF6F2,#EEF2EC)}
+.mission-inner{position:relative;z-index:1;display:flex;flex-direction:column;gap:40px;max-width:1120px;margin:0 auto}
 .mission-head{display:flex;flex-direction:column;align-items:center;gap:.5rem;text-align:center}
-.mission-head h2{margin:0;font-family:var(--head);font-weight:600;font-size:clamp(1.5rem,3.4vw,1.9rem);line-height:1.25;text-wrap:balance;color:var(--primary)}
+.mission-head h2{margin:0;font-family:var(--head);font-weight:600;font-size:clamp(1.5rem,3.4vw,1.9rem);line-height:1.25;text-wrap:balance}
 
-.mission-row{display:grid;gap:clamp(36px,5vw,56px);align-items:center}
+.mission-row{display:grid;gap:48px;align-items:center}
 .mission-media{position:relative;width:100%;max-width:280px;margin:0 auto}
-.mission-media img{display:block;width:100%;height:auto;border:4px solid var(--bg);border-radius:999px 999px 24px 24px;box-shadow:0 18px 40px rgba(42,31,34,.16)}
-.mission-media::before{content:"";position:absolute;inset:16px -16px -16px 16px;border:2px solid var(--accent);border-radius:999px 999px 24px 24px;z-index:-1}
+.mission-media img{position:relative;z-index:1}
+.mission-media img{display:block;width:100%;height:auto;border-radius:999px 999px 24px 24px;box-shadow:0 18px 40px rgba(42,31,34,.16)}
+.mission-media::before{content:"";position:absolute;inset:14px -14px -14px 14px;z-index:0;border:2px solid var(--accent);border-radius:999px 999px 24px 24px}
 
 .mission-cards{display:flex;flex-direction:column;gap:20px}
-.mission-card{display:flex;flex-direction:column;align-items:flex-start;gap:.7rem;padding:1.75rem;background:#fff;border-left:4px solid var(--primary);border-radius:16px;box-shadow:0 8px 24px rgba(42,31,34,.08)}
-.mission-card i{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:rgba(108,36,58,.08);color:var(--primary)}
-.mission-card .eyebrow{display:flex;align-items:center;gap:.6rem;margin:0;text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;font-weight:600;color:var(--sage-ink)}
-.mission-card .eyebrow::before{content:"";width:24px;height:1px;background:currentColor}
-.mission-card .mission-text{margin:0;font-family:var(--head);font-size:1.2rem;line-height:1.55;color:var(--text)}
+.mission-card{position:relative;overflow:hidden;z-index:1;display:flex;flex-direction:column;align-items:flex-start;gap:.9rem;padding:1.75rem;border-radius:18px;color:var(--bg);box-shadow:0 12px 32px rgba(0,0,0,.18);transition:opacity .7s ease,transform .7s ease,translate .5s ease,box-shadow .5s ease}
+.mission-card::before{content:"";position:absolute;inset:0;z-index:-2;background-position:center;background-size:cover;filter:blur(5px);transform:scale(1.12);transition:filter .5s ease}
+.mission-card::after{content:"";position:absolute;inset:0;z-index:-1}
+.mission-card:nth-child(1)::before{background-image:url(images/gallery/insect-museum-1.jpg)}
+.mission-card:nth-child(1)::after{background:linear-gradient(150deg,rgba(108,36,58,.88),rgba(133,48,75,.72))}
+.mission-card:nth-child(2)::before{background-image:url(images/gallery/zoo-trip.jpg)}
+.mission-card:nth-child(2)::after{background:linear-gradient(150deg,rgba(62,92,64,.9),rgba(111,138,107,.75))}
+.mission-card:hover{translate:0 -4px;box-shadow:0 18px 42px rgba(0,0,0,.24)}
+.mission-card:hover::before{filter:blur(3px)}
+.card-head{display:flex;align-items:center;gap:.75rem}
+.mission-card i{display:grid;place-items:center;flex:none;width:44px;height:44px;border-radius:50%;background:rgba(250,246,242,.15);color:var(--gold)}
+.card-label{margin:0;font-family:var(--head);font-style:italic;font-size:1.3rem;background-image:linear-gradient(90deg,#F3D9A4,#FAF6F2);-webkit-background-clip:text;background-clip:text;color:transparent}
+.mission-card .mission-text{margin:0;font-family:var(--body);font-weight:400;font-size:1.08rem;line-height:1.7;color:var(--bg)}
 
 @media (min-width:900px){
   :root{--row1:56px;--nav-h:102px}
@@ -209,15 +219,15 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 
   /* about: image left, copy right; principal stat beside the text */
   .trust-band{padding:56px var(--pad) 110px}
-  .about-inner{padding-bottom:64px}
+  .about-inner{padding-bottom:40px}
   .pillars{margin-top:-80px}
   .pillars{grid-template-columns:repeat(3,1fr);gap:1.25rem}
   .about-row{grid-template-columns:45% 1fr;align-items:center}
   .principal{grid-template-columns:28% 1fr}
   .principal-stat{min-height:100%;border-radius:24px 0 0 24px}
-  .mission{padding:64px var(--pad)}
+  .mission{padding:48px var(--pad) 64px}
   .mission-row{grid-template-columns:40% 1fr}
-  .mission-media{max-width:340px;margin:0}
+  .mission-media{max-width:420px}
 
   .principal-body{padding-right:132px;padding-bottom:clamp(28px,4vw,52px);border-radius:0 24px 24px 0}
   .hero-nav{opacity:0}
