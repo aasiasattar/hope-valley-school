@@ -10,16 +10,17 @@ place();
 
 addEventListener("scroll", () => nav.classList.toggle("is-scrolled", scrollY > 8), { passive: true });
 
+const close = () => {
+  nav.classList.remove("is-open");
+  toggle.setAttribute("aria-expanded", "false");
+};
+
 toggle.addEventListener("click", () =>
   toggle.setAttribute("aria-expanded", nav.classList.toggle("is-open"))
 );
 
-tabs.addEventListener("click", e => {
-  if (e.target.closest("a")) {
-    nav.classList.remove("is-open");
-    toggle.setAttribute("aria-expanded", "false");
-  }
-});
+tabs.addEventListener("click", e => { if (e.target.closest("a")) close(); });
+document.addEventListener("click", e => { if (!nav.contains(e.target)) close(); });
 
 const links = [...document.querySelectorAll(".tabs a")];
 const spy = new IntersectionObserver(
