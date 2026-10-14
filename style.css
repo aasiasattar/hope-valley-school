@@ -142,16 +142,14 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 /* principal card */
 .principal{position:relative;overflow:hidden;display:grid;width:100%;max-width:1120px;margin:48px auto 0;background:var(--glass-tint);border-radius:24px}
 .principal-stat,.principal-body{position:relative;z-index:1}
-.principal-stat{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;min-height:200px;padding:1.75rem;text-align:center;color:var(--bg);border-radius:24px 24px 0 0}
-.principal-stat::before{content:"";position:absolute;inset:0;z-index:-1;background:url(images/hero/hero-4.jpg) center/cover;filter:blur(6px);transform:scale(1.12)}
-.principal-stat::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(160deg,rgba(108,36,58,.88),rgba(133,48,75,.78))}
+.principal-stat{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;min-height:200px;padding:1.75rem;text-align:center;color:var(--bg);text-shadow:0 2px 12px rgba(0,0,0,.35);border-radius:24px 24px 0 0}
+.principal-stat::before{content:"";position:absolute;inset:0;z-index:-1;background:url(images/hero/hero-4.jpg) center/cover;filter:blur(3px);transform:scale(1.12)}
+.principal-stat::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(160deg,rgba(108,36,58,.72),rgba(133,48,75,.55))}
 .stat-line{width:40px;height:1px;background:var(--gold-line)}
 .principal-stat strong{font-family:var(--head);font-weight:600;font-size:clamp(3.4rem,8vw,4.8rem);line-height:1}
 .principal-stat small{font-size:1rem;font-weight:600}
 .principal-stat em{font-size:.85rem;line-height:1.4;opacity:.8}
 .principal-body{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:.9rem;padding:clamp(28px,4vw,52px);padding-bottom:calc(clamp(28px,4vw,52px) + 70px);border-radius:0 0 24px 24px}
-.principal-body::before{content:"";position:absolute;inset:0;z-index:-3;background:url(images/gallery/zoo-trip.jpg) center/cover;filter:blur(12px);transform:scale(1.15)}
-.principal-body::after{content:"";position:absolute;inset:0;z-index:-2;background:rgba(237,230,243,.92)}
 .principal-leaf{position:absolute;right:16px;bottom:16px;z-index:-1;width:90px;height:73px;background:url(images/logo-icon.png) no-repeat center/contain;opacity:.04;pointer-events:none}
 .principal-body h3{margin:0;font-family:var(--head);font-weight:600;font-size:1.6rem;text-wrap:balance;color:var(--primary)}
 .principal-body .principal-role{margin-top:-.55rem;font-size:.85rem;line-height:1.5;color:var(--muted)}
