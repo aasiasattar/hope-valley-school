@@ -65,13 +65,13 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 .foot-contact a:hover::after,.foot-contact a:focus-visible::after{transform:scaleX(1)}
 .tabs a:hover,.tabs a:focus-visible,.tabs a.is-active{color:var(--bg);background:rgba(250,246,242,.1);box-shadow:inset 3px 0 0 var(--gold)}
 
-.pill{display:flex;align-items:center;justify-content:center;min-height:48px;margin:.4rem 20px 0;padding:.5rem 1.3rem;text-align:center;border-radius:999px;text-decoration:none;font-weight:600;font-size:.95rem;white-space:nowrap;color:var(--primary);background:rgba(250,246,242,.88);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.6);box-shadow:0 2px 10px rgba(42,31,34,.2);transition:background .35s ease}
-.pill:hover{background:var(--bg)}
+.pill{display:flex;align-items:center;justify-content:center;min-height:48px;margin:.4rem 20px 0;padding:.5rem 1.3rem;text-align:center;border-radius:999px;text-decoration:none;font-weight:600;font-size:.95rem;white-space:nowrap;color:var(--primary);background:rgba(250,246,242,.88);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1.5px solid #E9C98B;box-shadow:0 2px 10px rgba(42,31,34,.2),0 0 10px rgba(243,217,164,.35);transition:background .35s ease,border-color .35s ease,box-shadow .35s ease}
+.pill:hover,.pill:focus-visible{background:var(--bg);border-color:#F3D9A4;box-shadow:0 2px 12px rgba(42,31,34,.22),0 0 16px rgba(243,217,164,.5)}
 
 .socials{display:flex;justify-content:center;gap:1.25rem;margin:.4rem 20px 0;padding-top:.75rem;border-top:1px solid rgba(250,246,242,.2)}
-.socials a{display:grid;place-items:center;width:44px;height:44px;color:var(--bg);transition:color .35s ease}
+.socials a{width:44px;height:44px;color:var(--bg)}
 .socials svg{width:24px;height:24px}
-.socials a:hover{color:var(--accent)}
+
 
 /* hero carousel */
 .hero{position:relative;overflow:hidden;display:flex;height:75svh;min-height:520px}
@@ -374,9 +374,10 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 .foot-links a:hover svg,.foot-links a:focus-visible svg,.foot-contact a:hover svg,.foot-contact a:focus-visible svg{color:var(--gold)}
 .foot-contact p{margin:0;color:rgba(250,246,242,.85);text-align:left}
 .foot-social{display:flex;gap:.7rem;margin-top:.5rem}
-.foot-social a{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;border:1px solid transparent;background:rgba(250,246,242,.1);color:var(--bg);transition:background .35s ease,color .35s ease,border-color .35s ease,translate .35s ease}
+.foot-social a,.socials a{display:grid;place-items:center;border:1px solid transparent;border-radius:50%;transition:background .35s ease,color .35s ease,border-color .35s ease,translate .35s ease}
+.foot-social a{width:40px;height:40px;background:rgba(250,246,242,.1)}
 .foot-social svg{fill:currentColor}
-.foot-social a:hover,.foot-social a:focus-visible{background:rgba(243,217,164,.18);border-color:var(--gold);color:var(--gold);translate:0 -2px}
+.foot-social a:hover,.foot-social a:focus-visible,.socials a:hover,.socials a:focus-visible{background:rgba(243,217,164,.18);border-color:var(--gold);color:var(--gold);translate:0 -2px}
 .foot-bar{position:relative;display:flex;flex-direction:column;align-items:center;gap:.4rem;max-width:1200px;margin:36px auto 0;padding-top:18px;border-top:1px solid rgba(250,246,242,.15);font-size:.85rem;color:rgba(250,246,242,.7);text-align:center}
 .credit{display:inline-block;line-height:1.5;font-family:var(--script);font-weight:700;font-size:1.15rem;background-image:linear-gradient(90deg,#F3D9A4,#FAF6F2);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 10px rgba(243,217,164,.55),0 0 22px rgba(243,217,164,.25);animation:credit-glow 3s ease-in-out infinite}
 
@@ -429,6 +430,7 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 
   .socials{justify-self:end;gap:.35rem;margin:0;padding:0;border:0}
   .socials a{width:34px;height:34px;color:var(--primary)}
+  .socials a:hover,.socials a:focus-visible{background:rgba(233,201,139,.22);border-color:#D9B26A;color:#B8862F}
   .socials svg{width:20px;height:20px}
 
   /* row 1 collapses on scroll, the maroon tab bar stays */
