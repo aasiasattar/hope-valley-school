@@ -1,8 +1,11 @@
 :root{
   --primary:#6C243A;
+  --primary-dark:#561B2E;
   --accent:#8FA58B;
   --bg:#FAF6F2;
   --text:#2A1F22;
+  --muted:#8A6B74;
+  --glass-tint:#EDE6F3;
   --head:"Fraunces",Georgia,serif;
   --body:"Nunito Sans",system-ui,sans-serif;
   --nav-h:76px;
@@ -12,30 +15,31 @@
 body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.6}
 main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 
-.nav{position:fixed;inset:0 0 auto;z-index:10;background:rgba(250,246,242,.68);backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);border-bottom:1px solid rgba(42,31,34,.07);transition:background .5s ease,box-shadow .5s ease}
-.nav.is-scrolled{background:rgba(250,246,242,.92);box-shadow:0 6px 24px rgba(42,31,34,.08)}
+.nav{position:fixed;inset:0 0 auto;z-index:10;background:linear-gradient(115deg,rgba(250,246,242,.74),rgba(237,230,243,.52) 65%,rgba(250,246,242,.6));backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border-bottom:1px solid rgba(42,31,34,.07);transition:background .5s ease,box-shadow .5s ease}
+.nav.is-scrolled{background:linear-gradient(115deg,rgba(250,246,242,.93),rgba(237,230,243,.8) 65%,rgba(250,246,242,.88));box-shadow:0 6px 24px rgba(42,31,34,.08)}
 
-.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;max-width:1200px;margin:0 auto;padding:.9rem 1.25rem}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.9rem clamp(20px,4vw,48px)}
 
 .brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:inherit}
-.brand img{width:44px;height:44px;border-radius:8px}
+.brand img{height:44px;width:auto}
 .brand-text{display:flex;flex-direction:column}
 .brand-text strong{font-family:var(--head);font-weight:600;font-size:1.15rem;color:var(--primary);line-height:1.2}
-.brand-text small{font-size:.72rem;letter-spacing:.02em;opacity:.7}
+.brand-text small{font-size:.72rem;letter-spacing:.02em;color:var(--muted)}
 
-.nav-toggle{display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;border-radius:10px;background:none;color:var(--primary);cursor:pointer}
+.nav-toggle{display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;background:none;color:var(--primary);cursor:pointer}
 .nav-toggle .icon-close,.nav-toggle[aria-expanded="true"] .icon-menu{display:none}
 .nav-toggle[aria-expanded="true"] .icon-close{display:block}
 
-.nav-menu{display:none;position:absolute;inset:100% 0 auto;flex-direction:column;gap:.25rem;padding:.75rem 1.25rem 1.25rem;background:rgba(250,246,242,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(42,31,34,.07)}
+.nav-menu{display:none;position:absolute;inset:100% 0 auto;flex-direction:column;gap:.25rem;padding:.75rem clamp(20px,4vw,48px) 1.25rem;background:linear-gradient(115deg,rgba(250,246,242,.95),rgba(237,230,243,.85));backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(42,31,34,.07)}
 .nav-toggle[aria-expanded="true"]~.nav-menu{display:flex}
 
-.nav-menu a{position:relative;align-self:flex-start;padding:.5rem 0;text-decoration:none;color:var(--text);font-size:.95rem}
+.nav-menu a{position:relative;align-self:flex-start;padding:.5rem 0;text-decoration:none;color:var(--text);font-size:.95rem;transition:color .35s ease}
 .nav-menu a:not(.pill)::after{content:"";position:absolute;left:0;right:0;bottom:.25rem;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .45s ease}
-.nav-menu a:not(.pill):hover::after,.nav-menu a:not(.pill):focus-visible::after{transform:scaleX(1)}
+.nav-menu a:not(.pill):hover::after,.nav-menu a:not(.pill):focus-visible::after,.nav-menu a.is-active::after{transform:scaleX(1)}
+.nav-menu a.is-active{color:var(--primary)}
 
-.pill{margin-top:.5rem;padding:.55rem 1.3rem;border-radius:999px;background:var(--primary);color:#fff;font-weight:600;transition:background .35s ease}
-.pill:hover{background:#561B2E}
+.pill{margin-top:.5rem;padding:.55rem 1.3rem;border-radius:999px;background:var(--primary);color:var(--bg);font-weight:600;transition:background .35s ease}
+.pill:hover{background:var(--primary-dark)}
 
 @media (min-width:900px){
   .nav-toggle{display:none}
