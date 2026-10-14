@@ -28,8 +28,10 @@ Show "Registered under Charity Act 2021" (small, trust signal).
 ## Content facts
 - Principal: Zermina Shakeel (no title), 30+ years of experience in teaching and running a school.
 - Phone & WhatsApp (principal): 0335-4988088. Floating WhatsApp button opens https://wa.me/923354988088
-- Email: hopevalleyschool18@gmail.com
+- Email: hopevalley18@gmail.com
 - Facebook: https://www.facebook.com/share/1ciJnt5rgU/
+- School address: Dhoke Malla Malot, Near Haji Chowk, Islamabad
+- Trust office address: Plot no. 3, Flat Class-3, Shopping Centre, Firdous Market, Sector F-6/2, Islamabad
 - Never invent numbers (no student/teacher counts).
 
 ## Workflow
