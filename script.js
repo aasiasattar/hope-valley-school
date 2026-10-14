@@ -95,19 +95,19 @@ const reveal = new IntersectionObserver((entries, obs) => entries.forEach(entry 
 }), { rootMargin: "0px 0px -10%" });
 document.querySelectorAll(".reveal,.reveal-right,.reveal-left").forEach(el => reveal.observe(el));
 
-const grid = document.getElementById("gallery-grid");
-grid.innerHTML = gallery.map((p, i) =>
-  `<button class="shot reveal${i > 8 ? " extra" : ""}" type="button" data-i="${i}" style="--i:${i};--src:url(images/gallery/${p.file})">
+const rows = document.getElementById("gallery-rows");
+const speeds = ["60s", "48s", "54s"];
+
+const tile = (p, i) =>
+  `<button class="gtile" type="button" data-i="${i}" style="--src:url(images/gallery/${p.file})">
      <img src="images/gallery/${p.file}" alt="${p.title}" loading="lazy">
      <span>${p.title}</span>
-   </button>`).join("");
+   </button>`;
 
-grid.querySelectorAll(".shot").forEach(el => reveal.observe(el));
-
-document.getElementById("gallery-more").addEventListener("click", e => {
-  grid.classList.add("show-all");
-  e.currentTarget.remove();
-});
+rows.innerHTML = speeds.map((t, r) => {
+  const strip = gallery.map(tile).filter((_, i) => i % 3 === r).join("");
+  return `<div class="grow"><div class="gtrack" style="--t:${t}">${strip}${strip}</div></div>`;
+}).join("");
 
 const lb = document.getElementById("lightbox");
 const lbImg = lb.querySelector("img");
@@ -122,10 +122,12 @@ const openShot = i => {
   lbImg.animate([{ opacity: 0 }, { opacity: 1 }], 250);
 };
 
-grid.addEventListener("click", e => {
-  const btn = e.target.closest(".shot");
+rows.addEventListener("click", e => {
+  const btn = e.target.closest(".gtile");
   if (btn) openShot(+btn.dataset.i);
 });
+
+document.getElementById("gallery-more").addEventListener("click", () => openShot(0));
 
 lb.addEventListener("click", e => {
   if (e.target.closest(".lb-prev")) openShot(shot - 1);
@@ -171,7 +173,7 @@ const showOrb = i => {
   orbs.forEach((o, k) => o.classList.toggle("on", k === orb));
   if (!calm) shotEl.firstElementChild.animate(
     [{ opacity: 0, transform: "translateX(60px)" }, { opacity: 1, transform: "none" }],
-    { duration: 1000, easing: "cubic-bezier(.22,.61,.36,1)" });
+    { duration: 1400, easing: "ease-out" });
 };
 
 ring.addEventListener("click", e => {
@@ -180,4 +182,4 @@ ring.addEventListener("click", e => {
 });
 
 showOrb(0);
-if (!calm) setInterval(() => showOrb(orb + 1), 5000);
+if (!calm) setInterval(() => showOrb(orb + 1), 6000);
