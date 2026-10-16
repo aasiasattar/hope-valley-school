@@ -459,12 +459,11 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 
 /* row 3 — marquee, scrolls away with the page */
 .marquee{display:flex;align-items:center;height:var(--marquee-h);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);background:var(--glass-tint);border-bottom:1px solid rgba(108,36,58,.18)}
-.marquee-track{display:flex;animation:marquee 45s linear infinite}
+.marquee-track{display:flex;animation:strip 45s linear infinite}
 .marquee:hover .marquee-track{animation-play-state:paused}
 .marquee-group{display:flex;flex:none;align-items:center;justify-content:space-around;gap:2.5rem;padding-right:2.5rem;min-width:100vw;font-family:var(--script);font-weight:700;font-size:1.5rem;color:var(--bright);white-space:nowrap}
 .marquee-group span{background-image:linear-gradient(90deg,#6C1A33 0%,#8E2A47 30%,#A8741A 50%,#C99A3A 55%,#8E2A47 75%,#6C1A33 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 1px 1px rgba(60,20,30,.25))}
 .sep{font-style:normal;font-size:.9rem;color:var(--accent)}
-@keyframes marquee{from{transform:translateX(-50%)}}
 @keyframes credit-glow{50%{text-shadow:0 0 6px rgba(243,217,164,.33),0 0 14px rgba(243,217,164,.15)}}
 @keyframes ring{0%{opacity:.7;scale:1}100%{opacity:0;scale:1.6}}
 @keyframes mist{from{translate:-3% -1%}to{translate:3% 1%}}
