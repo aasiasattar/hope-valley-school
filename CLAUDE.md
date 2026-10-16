@@ -7,8 +7,12 @@ Show "Registered under Charity Act 2021" (small, trust signal).
 
 ## Stack (strict)
 - Plain HTML + CSS + vanilla JS. No frameworks, no npm, no build tools.
-- Only these files: index.html, style.css, script.js, README.md, images/
+- Only these files: index.html, style.css, script.js, README.md, CNAME, images/
+- CNAME holds the custom domain for GitHub Pages — never delete or edit it.
 - Never create extra files or folders unless asked.
+
+## Hosting
+Hosted on GitHub Pages from the main branch (repo is public). Domain hopevalleytrust.com uses Netlify DNS records pointing to GitHub Pages. Netlify is no longer used for deploys. Every push to main goes live in 1–2 minutes.
 
 ## Code rules
 - Shortest clean solution. If 2 lines work, don't write 20.
