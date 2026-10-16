@@ -253,15 +253,17 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 
 .life-copy{display:flex;flex-direction:column;gap:1.1rem}
 .life-lead{margin:0;font-size:1.05rem;line-height:1.7;color:var(--text)}
+.life-note{margin:0;font-weight:600;color:var(--primary)}
 .life-list{display:flex;flex-direction:column;gap:.7rem;margin:0;padding:0;list-style:none}
-.life-row{display:flex;align-items:center;gap:.9rem;font-size:1.05rem;line-height:1.5;color:var(--text);transition:opacity 1.4s cubic-bezier(.22,.61,.36,1) calc(200ms + var(--i,0)*400ms),transform 1.4s cubic-bezier(.22,.61,.36,1) calc(200ms + var(--i,0)*400ms)}
+.life-row{display:flex;align-items:flex-start;gap:.9rem;font-size:1.05rem;line-height:1.55;color:var(--text);transition:opacity 1.4s cubic-bezier(.22,.61,.36,1) calc(200ms + var(--i,0)*400ms),transform 1.4s cubic-bezier(.22,.61,.36,1) calc(200ms + var(--i,0)*400ms)}
 .life-row:nth-child(2){--i:1}
 .life-row:nth-child(3){--i:2}
 .life-row:nth-child(4){--i:3}
 .life-row:nth-child(5){--i:4}
 .life-row:nth-child(6){--i:5}
-.life-row:nth-child(7){--i:6}
 .life-row i{display:grid;place-items:center;flex:none;width:40px;height:40px;border-radius:50%;background:rgba(108,36,58,.08);color:var(--primary)}
+.life-row span{padding-top:.45rem}
+.life-row b{color:var(--primary)}
 .life-row.is-in i{animation:pop .6s ease calc(300ms + var(--i,0)*400ms) backwards}
 
 /* orbit showcase */
