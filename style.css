@@ -150,7 +150,8 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 .about-copy>:nth-child(4){--i:3}
 .about-copy>:nth-child(5){--i:4}
 .about-copy>:nth-child(6){--i:5}
-.about-copy h2{margin:0;font-family:var(--head);font-weight:600;font-size:clamp(1.8rem,3.2vw,2.6rem);line-height:1.2;text-wrap:balance;color:var(--primary)}
+.about-copy h2{margin:0;font-family:var(--head);font-weight:600;font-size:clamp(1.6rem,3.2vw,2.6rem);line-height:1.2;text-wrap:balance;color:var(--primary)}
+.about-copy h2 span{white-space:nowrap}
 :where(.about-copy) p{margin:0;max-width:60ch;font-size:1.05rem;line-height:1.7;color:var(--text)}
 .about-copy .trust-line{display:flex;align-items:center;gap:.5rem;font-size:.85rem;line-height:1.5;color:var(--muted)}
 

@@ -3,7 +3,7 @@
 ## Project
 Landing page for Hope Valley School, run by Hope Valley Trust, Islamabad. Running since 2016.
 Always write "Hope Valley Trust", never "Foundation". Domain: hopevalleytrust.com
-Show "Registered under Charity Act 2021" (small, trust signal).
+Show "Registered under Charity Act 2021 and ICT-PEIRA" (small, trust signal).
 
 ## Stack (strict)
 - Plain HTML + CSS + vanilla JS. No frameworks, no npm, no build tools.
