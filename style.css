@@ -445,7 +445,15 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
   .about-inner{padding-bottom:32px}
   .pillars{margin-top:-80px}
   .why-band{padding:56px var(--pad)}
-  .life-row-wrap{grid-template-columns:44% 1fr;gap:36px}
+  .life-row-wrap{grid-template-columns:44% 1fr;gap:.8rem 36px}
+  .life-copy,.life-list{display:contents}
+  .polaroids{grid-row:1/6}
+  .life-lead,.life-note,.life-row{grid-column:2}
+  .life-row:nth-child(n+4){grid-column:1}
+  .life-row:nth-child(n+4):not(.is-in){transform:translateX(-60px)}
+  .life-row:nth-child(4){--i:0}
+  .life-row:nth-child(5){--i:1}
+  .life-row:nth-child(6){--i:2}
   .polaroids{margin-left:calc(40px - var(--edge));width:calc(100% + var(--edge) - 40px)}
   .polaroid{width:min(58%,348px)}
   .mission-row{grid-template-columns:40% 1fr}
