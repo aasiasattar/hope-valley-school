@@ -227,7 +227,9 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 .why-card:hover::before{filter:blur(6px)}
 .why-card i{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:rgba(108,36,58,.08);color:var(--primary)}
 .why-card h3{margin:0;font-family:var(--head);font-weight:600;font-size:1.2rem;background-image:linear-gradient(90deg,#6C243A,#9B2C4E 50%,#6F8A6B);-webkit-background-clip:text;background-clip:text;color:transparent}
-.why-card p{margin:0;font-size:1.02rem;line-height:1.65;background-image:linear-gradient(90deg,#4A1627,#2F4A33);-webkit-background-clip:text;background-clip:text;color:transparent}
+.why-card ul{display:grid;gap:.45rem;margin:0;padding:0;list-style:none}
+.why-card li{position:relative;padding-left:1.1rem;font-size:1rem;line-height:1.55;background-image:linear-gradient(90deg,#4A1627,#2F4A33);-webkit-background-clip:text;background-clip:text;color:transparent}
+.why-card li::before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:50%;background:#C99A3A}
 
 /* school life */
 .life{position:relative;overflow-x:clip;padding:96px var(--pad) 56px}
