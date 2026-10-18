@@ -6,7 +6,7 @@ const MAP_LINK = `https://www.google.com/maps/search/?api=1&query=${encodeURICom
 
 // Gallery photos — add a line here and it appears on the page.
 const gallery = [
-  { file: "cleanliness-drive-1.jpg", title: "14 August Cleanliness Drive" },
+  { file: "cleanliness-drive-1.jpg", title: "Cleanliness Drive" },
   { file: "cleanliness-drive-2.jpg", title: "Small hands, big dreams, one team." },
   { file: "cleanliness-drive-3.jpg", title: "Clearing the roadside" },
   { file: "independence-day.jpg", title: "Independence Day celebration" },
