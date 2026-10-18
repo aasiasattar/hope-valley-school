@@ -11,7 +11,7 @@ const gallery = [
   { file: "cleanliness-drive-3.jpg", title: "Clearing the roadside" },
   { file: "independence-day.jpg", title: "Independence Day celebration" },
   { file: "convocation-2023-1.jpg", title: "Jungle tableau, Convocation 2023-24" },
-  { file: "convocation-2023-2.jpg", title: "Solar system performance, Convocation 2023-24" },
+  { file: "convocation-2023-2.jpg", title: "Launching our little solar system into the future — Convocation 2023-24" },
   { file: "convocation-2023-3.jpg", title: "Graduates in cap and gown, Convocation 2023-24" },
   { file: "convocation-2023-4.jpg", title: "Graduates with their certificates, Convocation 2023-24" },
   { file: "convocation-2016-1.jpg", title: "Graduates on stage, Convocation 2016-17" },
