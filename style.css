@@ -111,7 +111,7 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 .reveal-right.is-in,.reveal-left.is-in{opacity:1;transform:none}
 .rule{width:60px;height:1px;background:var(--accent)}
 .section-title{display:inline-flex;align-items:center;gap:.7rem;margin:0;font-family:var(--head);font-style:italic;font-weight:600;font-size:clamp(1.6rem,2.6vw,2.1rem);line-height:1.2}
-.section-title span,.mission-head h2,.life-head h2,.gallery-head h2,.contact-head h2{background-image:linear-gradient(90deg,#6C243A,#9B2C4E 50%,#6F8A6B);-webkit-background-clip:text;background-clip:text;color:transparent}
+.section-title span,.life-head h2,.gallery-head h2,.contact-head h2{background-image:linear-gradient(90deg,#6C243A,#9B2C4E 50%,#6F8A6B);-webkit-background-clip:text;background-clip:text;color:transparent}
 .section-title i{font-style:normal;font-size:.55em;color:var(--accent)}
 .about .script-sub{font-family:var(--script);font-weight:600;font-size:1.6rem;line-height:1.2;color:var(--rose)}
 
@@ -176,9 +176,9 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 .mission{position:relative;overflow-x:clip;background:rgba(238,242,236,.82)}
 .mission::before{content:"";position:absolute;inset:0 0 auto;height:120px;background:linear-gradient(180deg,#FAF6F2,#EEF2EC)}
 .mission-inner{position:relative;z-index:1;display:flex;flex-direction:column;gap:40px;max-width:1200px;margin:0 auto;padding:48px var(--pad) 0}
-.mission-head{display:flex;flex-direction:column;align-items:center;gap:.5rem;text-align:center;transition:opacity 1.2s ease,transform 1.2s ease}
+.mission-head{display:flex;flex-direction:column;align-items:center;text-align:center;transition:opacity 1.2s ease,transform 1.2s ease}
 .mission-head .section-title span{text-wrap:balance}
-.mission-head h2,.life-head h2,.gallery-head h2,.contact-head h2{margin:0;font-family:var(--head);font-weight:600;font-size:clamp(1.5rem,3.4vw,1.9rem);line-height:1.25;text-wrap:balance}
+.life-head h2,.gallery-head h2,.contact-head h2{margin:0;font-family:var(--head);font-weight:600;font-size:clamp(1.5rem,3.4vw,1.9rem);line-height:1.25;text-wrap:balance}
 
 .mission-row{display:grid;gap:48px;align-items:center;width:100%;max-width:1120px;margin:0 auto}
 .mission-media{position:relative;width:100%;max-width:280px;margin:0 auto;transition:opacity 1.4s cubic-bezier(.22,.61,.36,1) .4s,transform 1.4s cubic-bezier(.22,.61,.36,1) .4s}
