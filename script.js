@@ -193,3 +193,9 @@ if (!calm) setInterval(() => showOrb(orb + 1), 6000);
 
 document.getElementById("contact-map").src = MAP_SRC;
 document.getElementById("foot-address").href = MAP_LINK;
+
+const toast = document.getElementById("toast");
+const hideToast = () => { toast.classList.add("is-off"); setTimeout(() => toast.remove(), 600); };
+toast.querySelector("button").addEventListener("click", hideToast);
+setTimeout(() => toast.classList.remove("is-off"), 1000);
+setTimeout(hideToast, 7000);
