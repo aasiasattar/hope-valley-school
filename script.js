@@ -10,7 +10,7 @@ const gallery = [
   { file: "cleanliness-drive-2.jpg", title: "Small hands, big dreams, one team." },
   { file: "cleanliness-drive-3.jpg", title: "Clearing the roadside" },
   { file: "independence-day.jpg", title: "Independence Day celebration" },
-  { file: "convocation-2023-1.jpg", title: "Jungle tableau, Convocation 2023-24" },
+  { file: "convocation-2023-1.jpg", title: "Unlocking creativity on the stage." },
   { file: "convocation-2023-2.jpg", title: "Launching our little solar system into the future — Convocation 2023-24" },
   { file: "convocation-2023-4.jpg", title: "Graduates with their certificates, Convocation 2023-24" },
   { file: "convocation-2016-1.jpg", title: "Convocation 2016-17" },
