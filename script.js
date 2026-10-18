@@ -195,7 +195,12 @@ document.getElementById("contact-map").src = MAP_SRC;
 document.getElementById("foot-address").href = MAP_LINK;
 
 const toast = document.getElementById("toast");
-const hideToast = () => { toast.classList.add("is-off"); setTimeout(() => toast.remove(), 600); };
-toast.querySelector("button").addEventListener("click", hideToast);
-setTimeout(() => toast.classList.remove("is-off"), 1000);
-setTimeout(hideToast, 7000);
+new IntersectionObserver(([e], obs) => {
+  if (!e.isIntersecting) return;
+  obs.disconnect();
+  toast.classList.add("is-in");
+  setTimeout(() => {
+    toast.classList.add("is-out");
+    setTimeout(() => toast.remove(), 600);
+  }, 4600);
+}, { threshold: 0.5 }).observe(toast);
