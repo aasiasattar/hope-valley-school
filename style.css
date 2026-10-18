@@ -296,8 +296,8 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 .gtile span{position:absolute;z-index:3;inset:auto 0 0;padding:1.1rem .6rem .45rem;font-family:var(--body);font-weight:700;font-size:.72rem;line-height:1.3;text-align:left;color:var(--bg);background:linear-gradient(0deg,rgba(108,36,58,.85),transparent);text-wrap:balance}
 .gtile:hover img,.gtile:focus-visible img{scale:1.06}
 .gallery-more{--ov:rgba(108,36,58,.78);position:relative;z-index:1;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:.6rem;width:min(340px,100%);height:56px;align-self:center;padding:0;border:0;border-radius:999px;background:none;color:var(--bg);font:inherit;font-weight:600;cursor:pointer;box-shadow:0 10px 26px rgba(108,36,58,.3);transition:translate .4s ease,box-shadow .4s ease}
-.gallery-more::before,.btn::before{content:"";position:absolute;inset:0;z-index:-2;background:url(images/gallery/convocation-2023-1.jpg) left center/34% 100% no-repeat,url(images/gallery/talent-hunt-week.jpg) center/34% 100% no-repeat,url(images/gallery/zoo-trip.jpg) right center/34% 100% no-repeat;filter:blur(3px);transform:scale(1.1)}
-.gallery-more::after,.btn::after{content:"";position:absolute;inset:0;z-index:-1;background:var(--ov);transition:background .4s ease}
+.gallery-more::before,.btn::before,.toast a::before{content:"";position:absolute;inset:0;z-index:-2;background:url(images/gallery/convocation-2023-1.jpg) left center/34% 100% no-repeat,url(images/gallery/talent-hunt-week.jpg) center/34% 100% no-repeat,url(images/gallery/zoo-trip.jpg) right center/34% 100% no-repeat;filter:blur(3px);transform:scale(1.1)}
+.gallery-more::after,.btn::after,.toast a::after{content:"";position:absolute;inset:0;z-index:-1;background:var(--ov);transition:background .4s ease}
 .gallery-more:hover{--ov:rgba(108,36,58,.62);translate:0 -3px;box-shadow:0 16px 34px rgba(108,36,58,.38)}
 
 .lightbox{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;gap:.5rem;padding:clamp(12px,3vw,32px);background:rgba(26,14,19,.92);animation:fade-in .35s ease}
@@ -351,7 +351,7 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 .toast{display:grid;grid-template-rows:1fr;margin:24px 16px 0;padding:4px 0 14px;overflow:hidden;opacity:0;translate:0 16px;transition:opacity .6s ease,translate .6s ease,grid-template-rows .6s ease,margin .6s ease,padding .6s ease}
 .toast.is-in{opacity:1;translate:none}
 .toast.is-out{grid-template-rows:0fr;margin:0 16px;padding:0;opacity:0}
-.toast a{justify-self:center;display:flex;align-items:center;gap:.65rem;min-height:0;max-width:720px;padding:.7rem 1.3rem;border:1px solid #E9C98B;border-radius:16px;background:linear-gradient(90deg,#F6F0F8,#FAF6F2);box-shadow:0 8px 22px rgba(42,31,34,.1);font-size:.92rem;line-height:1.45;color:#2A1F22;text-decoration:none}
+.toast a{--ov:linear-gradient(90deg,rgba(246,240,248,.88),rgba(250,246,242,.88));position:relative;z-index:1;overflow:hidden;justify-self:center;display:flex;align-items:center;gap:.65rem;min-height:0;max-width:720px;padding:.7rem 1.3rem;border:1px solid #E9C98B;border-radius:16px;box-shadow:0 8px 22px rgba(42,31,34,.1);font-size:.92rem;line-height:1.45;color:#2A1F22;text-decoration:none}
 .toast a:hover{color:#6C243A;text-decoration:underline}
 .toast svg{flex:none;color:#B8862F}
 .toast b{color:#6C243A}
@@ -397,7 +397,6 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
   .message-actions .btn{width:auto}
   .contact-cards{grid-template-columns:1fr 1fr}
   .contact-card:first-child{grid-column:1/-1}
-  .toast a{border-radius:999px}
   .foot-inner{grid-template-columns:1.3fr 1fr 1.2fr;gap:48px;text-align:left;justify-items:start}
   .foot-brand,.foot-links,.foot-contact{align-items:flex-start}
   .foot-bar{flex-direction:row;justify-content:space-between;padding-right:96px}
@@ -453,6 +452,7 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
   .about-inner{padding-bottom:32px}
   .pillars{margin-top:-80px}
   .why-band{padding:56px var(--pad)}
+  .toast a{max-width:880px;border-radius:999px;white-space:nowrap}
   .life-row-wrap{grid-template-columns:44% 1fr;gap:.8rem 36px}
   .life-copy,.life-list{display:contents}
   .polaroids{grid-row:1/6}
