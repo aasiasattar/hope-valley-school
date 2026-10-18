@@ -1,5 +1,5 @@
 // Map location — swap this one query to move the pin; the embed and the
-// footer address link both derive from it.
+// address links (contact card + footer) all derive from it.
 const MAP_QUERY = "Haji Chowk Bahria Enclave Islamabad";
 const MAP_SRC = `https://www.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&z=15&output=embed`;
 const MAP_LINK = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAP_QUERY)}`;
@@ -34,6 +34,7 @@ const toggle = document.getElementById("nav-toggle");
 const tabs = document.getElementById("nav-tabs");
 const socials = document.querySelector(".socials");
 const wide = matchMedia("(min-width:900px)");
+const calm = matchMedia("(prefers-reduced-motion:reduce)").matches;
 
 const place = () => (wide.matches ? document.getElementById("nav-top") : tabs).append(socials);
 wide.addEventListener("change", place);
@@ -73,7 +74,7 @@ const show = n => {
   slides.forEach((img, k) => img.classList.toggle("is-active", k === at));
   dots.forEach((dot, k) => dot.classList.toggle("is-active", k === at));
 };
-const play = () => (timer = setInterval(() => show(at + 1), 6000));
+const play = () => calm || (timer = setInterval(() => show(at + 1), 6000));
 const stop = () => clearInterval(timer);
 
 hero.addEventListener("mouseenter", stop);
@@ -113,21 +114,24 @@ const tile = (p, i) =>
 
 rows.innerHTML = speeds.map((t, r) => {
   const strip = gallery.map(tile).filter((_, i) => i % 3 === r).join("");
-  return `<div class="grow"><div class="gtrack" style="--t:${t}">${strip}${strip}</div></div>`;
+  const copy = strip.replaceAll("<button", '<button tabindex="-1" aria-hidden="true"');
+  return `<div class="grow"><div class="gtrack" style="--t:${t}">${strip}${copy}</div></div>`;
 }).join("");
 
 const lb = document.getElementById("lightbox");
 const lbImg = lb.querySelector("img");
 const lbCap = lb.querySelector(".lb-cap");
-let shot = 0;
+let shot = 0, opener;
 
 const openShot = i => {
   shot = (i + gallery.length) % gallery.length;
   lbImg.src = "images/gallery/" + gallery[shot].file;
   lbImg.alt = lbCap.textContent = gallery[shot].title;
-  lb.hidden = false;
+  if (lb.hidden) { opener = document.activeElement; lb.hidden = false; lb.querySelector(".lb-close").focus(); }
   lbImg.animate([{ opacity: 0 }, { opacity: 1 }], 250);
 };
+
+const closeLb = () => { lb.hidden = true; opener?.focus(); };
 
 rows.addEventListener("click", e => {
   const btn = e.target.closest(".gtile");
@@ -139,12 +143,12 @@ document.getElementById("gallery-more").addEventListener("click", () => openShot
 lb.addEventListener("click", e => {
   if (e.target.closest(".lb-prev")) openShot(shot - 1);
   else if (e.target.closest(".lb-next")) openShot(shot + 1);
-  else if (!e.target.closest(".lb-body")) lb.hidden = true;
+  else if (!e.target.closest(".lb-body")) closeLb();
 });
 
 addEventListener("keydown", e => {
   if (lb.hidden) return;
-  if (e.key === "Escape") lb.hidden = true;
+  if (e.key === "Escape") closeLb();
   if (e.key === "ArrowLeft") openShot(shot - 1);
   if (e.key === "ArrowRight") openShot(shot + 1);
 });
@@ -159,7 +163,6 @@ lb.addEventListener("touchend", e => {
 /* orbit showcase */
 const ring = document.getElementById("orbit-ring");
 const picks = gallery.slice(0, 8);
-const calm = matchMedia("(prefers-reduced-motion:reduce)").matches;
 
 ring.innerHTML = picks.map((p, i) =>
   `<button class="orb" type="button" data-i="${i}" style="--a:${(i / picks.length) * 360}deg" aria-label="${p.title}">
@@ -192,7 +195,7 @@ showOrb(0);
 if (!calm) setInterval(() => showOrb(orb + 1), 6000);
 
 document.getElementById("contact-map").src = MAP_SRC;
-document.getElementById("foot-address").href = MAP_LINK;
+document.querySelectorAll("[data-map]").forEach(a => (a.href = MAP_LINK));
 
 const toast = document.getElementById("toast");
 new IntersectionObserver(([e], obs) => {

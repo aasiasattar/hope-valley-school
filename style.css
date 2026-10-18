@@ -5,7 +5,7 @@
   --sage-ink:#6F8A6B;
   --bg:#FAF6F2;
   --text:#2A1F22;
-  --muted:#8A6B74;
+  --muted:#765862;
   --glass-tint:#EDE6F3;
   --bright:#7E1F3D;
   --rose:#9B2C4E;
@@ -294,7 +294,7 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 .gtile{position:relative;flex:none;overflow:hidden;width:200px;height:150px;padding:0;border:0;border-radius:14px;background:#2A1F22;font:inherit;cursor:pointer}
 .gtile::before{content:"";position:absolute;inset:0;background-image:var(--src);background-position:center;background-size:cover;filter:blur(12px) brightness(.62);transform:scale(1.18)}
 .gtile img{display:block;position:relative;z-index:1;width:100%;height:100%;object-fit:contain;transition:scale .5s ease}
-.gtile span{position:absolute;z-index:3;inset:auto 0 0;padding:1.1rem .6rem .45rem;font-family:var(--body);font-weight:700;font-size:.72rem;line-height:1.3;text-align:left;color:var(--bg);background:linear-gradient(0deg,rgba(108,36,58,.85),transparent);text-wrap:balance}
+.gtile span{position:absolute;z-index:3;inset:auto 0 0;padding:1.1rem .6rem .45rem;font-family:var(--body);font-weight:700;font-size:.72rem;line-height:1.3;text-align:left;color:var(--bg);background:linear-gradient(0deg,rgba(108,36,58,.9),rgba(108,36,58,.72) calc(100% - 1.1rem),transparent);text-wrap:balance}
 .gtile:hover img,.gtile:focus-visible img{scale:1.06}
 .gallery-more{--ov:rgba(108,36,58,.78);position:relative;z-index:1;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:.6rem;width:min(340px,100%);height:56px;align-self:center;padding:0;border:0;border-radius:999px;background:none;color:var(--bg);font:inherit;font-weight:600;cursor:pointer;box-shadow:0 10px 26px rgba(108,36,58,.3);transition:translate .4s ease,box-shadow .4s ease}
 .gallery-more::before,.btn::before,.toast a::before{content:"";position:absolute;inset:0;z-index:-2;background:url(images/gallery/convocation-2023-1.jpg) left center/34% 100% no-repeat,url(images/gallery/talent-hunt-week.jpg) center/34% 100% no-repeat,url(images/gallery/zoo-trip.jpg) right center/34% 100% no-repeat;filter:blur(3px);transform:scale(1.1)}
