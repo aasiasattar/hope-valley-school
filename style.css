@@ -169,6 +169,7 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 .principal-leaf{position:absolute;right:16px;bottom:16px;z-index:-1;width:90px;height:73px;background:url(images/logo-icon.png) no-repeat center/contain;opacity:.04;pointer-events:none}
 .principal-body h3{margin:0;font-family:var(--head);font-weight:600;font-size:1.6rem;text-wrap:balance;color:var(--primary)}
 .principal-body .principal-role{margin-top:-.55rem;font-size:.85rem;line-height:1.5;color:var(--muted)}
+.principal-role span{display:block}
 :where(.principal-body) p{margin:0;max-width:66ch;font-size:1.05rem;line-height:1.7;color:var(--text)}
 .principal-body blockquote{margin:.4rem 0;padding-left:20px;border-left:3px solid var(--gold-line);font-family:var(--head);font-style:italic;font-size:1.35rem;line-height:1.45;text-wrap:balance;color:var(--primary)}
 
@@ -452,6 +453,8 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
   .about-inner{padding-bottom:32px}
   .pillars{margin-top:-80px}
   .why-band{padding:56px var(--pad)}
+  .principal-role span{display:inline}
+  .principal-role span+span::before{content:" · "}
   .toast a{max-width:880px;border-radius:999px;white-space:nowrap}
   .life-row-wrap{grid-template-columns:44% 1fr;gap:.8rem 36px}
   .life-copy,.life-list{display:contents}
