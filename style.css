@@ -319,6 +319,19 @@ main section{min-height:70vh;scroll-margin-top:var(--nav-h)}
 .message-name{margin:0 0 16px;font-family:var(--head);font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:1.1rem;color:var(--primary)}
 .message blockquote{margin:0;font-family:var(--head);font-style:italic;font-size:clamp(1.4rem,2.6vw,2rem);line-height:1.4;text-wrap:balance;background-image:linear-gradient(90deg,#5A1C30,#85304B 50%,#3E5C40);-webkit-background-clip:text;background-clip:text;color:transparent}
 .message-note{margin:0;font-size:1.1rem;color:rgba(42,31,34,.8)}
+.donate{width:100%;max-width:520px;padding:20px clamp(16px,4vw,24px);border-radius:16px;background:#fff;border-top:4px solid var(--primary);box-shadow:0 8px 22px rgba(42,31,34,.08);text-align:left}
+.donate h3{display:flex;align-items:center;gap:.5rem;margin:0 0 14px;font-family:var(--head);font-weight:600;font-size:clamp(1.1rem,4.6vw,1.25rem);color:var(--primary)}
+.donate h3 svg{flex:none;color:var(--sage-ink)}
+.donate dl{display:grid;gap:10px;margin:0}
+.donate dt{font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--sage-ink)}
+.donate dd{margin:0;font-size:.98rem;color:var(--text)}
+.donate dd span{color:var(--accent);margin:0 .3rem}
+.iban dd{display:flex;align-items:center;gap:10px}
+.iban code{font-family:var(--body);font-size:clamp(.85rem,3.9vw,1rem);font-weight:700;letter-spacing:.04em;white-space:nowrap;color:var(--primary)}
+.iban button{flex:none;padding:5px 14px;border:1px solid var(--sage-ink);border-radius:999px;background:none;font:600 .82rem var(--body);color:var(--sage-ink);cursor:pointer;transition:background .35s ease,color .35s ease}
+.iban button:hover,.iban button.is-done{background:var(--sage-ink);color:#fff}
+.donate p{margin:14px 0 0;font-size:.85rem;color:var(--muted)}
+@media (max-width:359px){.iban dd{flex-wrap:wrap}}
 .message-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:.4rem;width:100%}
 @media (max-width:479px){.message-actions .btn{flex:1 1 100%}}
 .btn{position:relative;z-index:1;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:.55rem;min-width:200px;height:52px;padding:0 1.5rem;font-size:1rem;border-radius:999px;text-decoration:none;font-weight:600;color:var(--bg);transition:translate .35s ease,box-shadow .35s ease,background .35s ease}

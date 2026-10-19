@@ -207,3 +207,11 @@ new IntersectionObserver(([e], obs) => {
     setTimeout(() => toast.remove(), 600);
   }, 4600);
 }, { threshold: 0.5 }).observe(toast);
+
+const copyIban = document.getElementById("copy-iban");
+copyIban.addEventListener("click", async () => {
+  await navigator.clipboard.writeText(copyIban.previousElementSibling.textContent);
+  copyIban.textContent = "Copied!";
+  copyIban.classList.add("is-done");
+  setTimeout(() => { copyIban.textContent = "Copy"; copyIban.classList.remove("is-done"); }, 2000);
+});
